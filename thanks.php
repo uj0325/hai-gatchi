@@ -6,19 +6,15 @@
 		exit();
 	}
 
-  // $nickname = $_POST['nickname'];
-  // $email = $_POST['email'];
-  // $content = $_POST['content'];
-  $nickname=htmlspecialchars($_POST['nickname']);
+  $username=htmlspecialchars($_POST['username']);
   $email=htmlspecialchars($_POST['email']);
-  $content=htmlspecialchars($_POST['content']);
+  $gatch_password=htmlspecialchars($_POST['password']);
 
-  //データを保存する処理(最高に覚えにくい)
-  //PHPととMySQLの連携(PHPからMySQLを使用するやり方)
-  //データベースの保存には大きく3ステップが必要
+
+  //データを保存する処理
 
   //Step1 : データベースとの接続情報を記述する
-  $dsn = 'mysql:dbname=survey;host=localhost';
+  $dsn = 'mysql:dbname=hi_gatch;host=localhost';
   $user = 'root';
   $password = '';
   $dbh = new PDO($dsn,$user,$password);
@@ -35,15 +31,15 @@
   //この5行はプログラムを理解する、というより丸暗記。	
 
   //step2 SQL文を記述
-  $sql = 'INSERT INTO `survey` SET
-                      `nickname`=?,
+  $sql = 'INSERT INTO `gatch_users` SET
+                      `user_name`=?,
                       `email`=?,
-                      `content`=?;
+                      `password`=?;
   ';
 
   //step3 記述したSQLを実行する
   //?マークの記述を配列の順番で上書きする
-  $data = array($nickname,$email,$content);
+  $data = array($username,$email,$gatch_password);
   //SQL文を実行する準備を行う
   $stmt = $dbh->prepare($sql);
   //SQL文を実行する(?マークを上書きして実行)
@@ -61,10 +57,12 @@
   <meta charset="utf-8">
 </head>
 <body>
-  <h1>お問い合わせありがとうございました！</h1>
-  <p><?php echo $nickname; ?>様</p>
-  <p>メールアドレス:<?php echo $email; ?></p>
-  <p>お問合せ内容:<?php echo $content; ?></p>
+
+  <div style="text-align: center">
+    <h1>新規会員登録ありがとうございました！</h1>
+    <br>
+    <a href="top.php">トップページに戻る</a>
+  </div>
 
 </body>
 </html>

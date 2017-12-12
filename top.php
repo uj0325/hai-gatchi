@@ -86,6 +86,7 @@
 			 	style="text-align: center;background-color: #e5fff2">
 			 		<h2>会員ログイン</h2>
 			 		<br>
+			 		
 				    <form action="condition.php" method="POST">
 
 					<!-- メールアドレスのデータ -->
