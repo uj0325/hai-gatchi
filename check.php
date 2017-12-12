@@ -1,12 +1,11 @@
 <?php
 	
-	if(empty($_POST)){
-		echo 'データを入力してください。<br>';
-		echo '<a href="top.php">新規会員情報入力画面へ戻る</a>';
-		exit();
-	}
+	// if(empty($_POST)){
+	// 	echo 'データを入力してください。<br>';
+	// 	echo '<a href="top.php">新規会員情報入力画面へ戻る</a>';
+	// 	exit();
+	// }
 
-	
 	$username=htmlspecialchars($_POST['username']);
 	$email=htmlspecialchars($_POST['email']);
 	$password=htmlspecialchars($_POST['password']);

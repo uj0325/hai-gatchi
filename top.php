@@ -3,44 +3,19 @@
  ?>
  <?php 
 
-	$username ='';
-	$email ='';
 	$email_o ='';
+	$password_o ='';
+	$top_flag=0;
 
 	if(!empty($_POST)){
-
-		$username=htmlspecialchars($_POST['username']);
-		$email=htmlspecialchars($_POST['email']);
-		$password=htmlspecialchars($_POST['password']);
-		$password2=htmlspecialchars($_POST['password2']);
 
 		$email_o=htmlspecialchars($_POST['email_o']);
 		$password_o=htmlspecialchars($_POST['password_o']);
 
 		//エラー件数チェック
-		$errors = array();
 		$errors2 = array();
 
 		//バリデーション(検証)
-		if($username == ''){
-			$errors['username']='blank';
-		}
-		if($email == ''){
-			$errors['email']='blank';
-		}
-		if($password == ''){
-			$errors['password']='blank';
-		}elseif(strlen($password) < 4){
-			$errors['password']='length';
-		}
-		if($password2 == ''){
-			$errors['password2']='blank';
-		}elseif(strlen($password) < 4){
-			$errors['password2']='length';
-		}elseif($password2 != $password){
-			$errors['password2']='notsame';
-		}
-
 
 		if($email_o == ''){
 			$errors2['email_o']='blank';
@@ -51,7 +26,9 @@
 			$errors2['password_o']='length';
 		}
 
-		
+		if(empty($errors2)){
+			$top_flag=1;
+		}
 	}
 
  ?>
@@ -67,7 +44,7 @@
  		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
  		<script type="assets/js/bootstrap.js"></script>
  	
- 	<div>
+ 		<?php if($top_flag == 0){ ?>
  		<!-- はい、合致とは～ -->
  		<div class="container">
  			<div class="row">
@@ -82,17 +59,16 @@
 			 		</div>
 			 	</div>
 
-			 	<div class="col-lg-4 col-lg-offset-1 col-xs-10 col-xs-offset-2" 
-			 	style="text-align: center;background-color: #e5fff2">
+			 	<div class="col-lg-12" style="text-align: center;background-color: #e5fff2">
 			 		<h2>会員ログイン</h2>
 			 		<br>
-			 		
-				    <form action="condition.php" method="POST">
+
+				    <form action=" " method="POST">
 
 					<!-- メールアドレスのデータ -->
 					<label>メールアドレス</label><br>
 					<input type="text" name="email_o" placeholder="例：tom@gmail.com"
-					value="<?php echo $email; ?>">
+					value="<?php echo $email_o; ?>">
 					<br>
 					<?php if(isset($errors2['email_o']) && 
 					$errors2['email_o'] == 'blank'){?>
@@ -127,93 +103,22 @@
 				</form>
 			 	</div>
 
-
-			 	<div class="col-lg-4 col-lg-offset-2 col-xs-10 col-xs-offset-2" 
-			 	style="text-align: center;background-color: #e5fff2">
-			 		<h2>新規登録</h2>
-			 		<br>
-				    <form action="check.php" method="POST">
-
-					<!-- ユーザー名のデータ -->
-					<label>ユーザー名</label><br>
-					<input type="text" name="username" placeholder="例：トムトム"
-					value="<?php echo $username; ?>">
-					<br>
-					
-					<?php if(isset($errors['username']) && 
-					$errors['username'] == 'blank'){?>
-					<div class="alert alert-danger">
-						ユーザー名を入力してください。
-					</div>
-					<?php } ?>
-					<br>
-
-					<!-- メールアドレスのデータ -->
-					<label>メールアドレス</label><br>
-					<input type="text" name="email" placeholder="例：tom@gmail.com"
-					value="<?php echo $email; ?>">
-					<br>
-					<?php if(isset($errors['email']) && 
-					$errors['email'] == 'blank'){?>
-					<div  class="alert alert-danger">
-						メールアドレスを入力してください。
-					</div>
-					<?php } ?>
-					<br>
-
-					<!-- パスワードのデータ -->
-					<label>パスワード</label><br>
-					<input type="password" name="password">
-					<br>
-					<?php if(isset($errors['password']) && 
-					$errors['password'] == 'blank'){?>
-					<div  class="alert alert-danger">
-						パスワードを入力してください。
-					</div>
-					<?php }?>
-
-					<?php if(isset($errors['password']) &&
-					$errors['password'] == 'length'){ ?>
-					<div  class="alert alert-danger">
-						パスワードは4文字以上を設定してください。
-					</div>
-					<?php } ?>
-
-					<!-- パスワードのデータ -->
-					<label>パスワード(確認用)</label><br>
-					<input type="password" name="password2">
-					<br>
-					<?php if(isset($errors['password2']) && 
-					$errors['password2'] == 'blank'){?>
-					<div  class="alert alert-danger">
-						パスワード(確認用)を入力してください。
-					</div>
-					<?php }?>
-
-					<?php if(isset($errors['password2']) &&
-					$errors['password2'] == 'length'){ ?>
-					<div  class="alert alert-danger">
-						パスワードは4文字以上を設定してください。
-					</div>
-					<?php } ?>
-
-					<?php if(isset($errors['password2']) && 
-					$errors['password2'] == 'notsame'){ ?>
-					<div  class="alert alert-danger">
-						パスワード(確認用)はパスワードと同じにしてください。
-					</div>
-					<?php } ?>
-
-					<br>
-					<!-- 送信ボタン -->
-					<input type="submit" value="登録確認画面へ">
-					<br><br>
-					</form>
+			 	<button type="button" class="btn btn-default btn-lg btn-block">
+			 		<a href="touroku.php">新規会員登録</a>
+			 	</button>
 					
 				</div>
 			</div>
-		</div>
+			<?php } ?>
 
+			<?php 
+				if($top_flag == 1){
+					
+					require('condition.php');
+				}
+				
+			 ?>
+		
  	</div>
  		
  </body>
