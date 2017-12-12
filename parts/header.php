@@ -2,7 +2,7 @@
  		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
  		<script type="assets/js/bootstrap.js"></script>
  		<?php //ヘッダーのメニュータグを作成 ?>
- 		<div  style="background-color: #e6e6fa;padding: 15px;position: fixed;top:0px;width:100%;z-index: 10;">
+ 		<div  style="background-color: #d1ffa3;padding: 15px;position: fixed;top:0px;width:100%;z-index: 10;">
 	 		<div class="container" style="float: center;">
 	 			<div class="row">
 	 				<div class="col-lg-3">
