@@ -131,7 +131,7 @@
 			 	style="text-align: center;background-color: #e5fff2">
 			 		<h2>新規登録</h2>
 			 		<br>
-				    <form action="chech.php" method="POST">
+				    <form action="check.php" method="POST">
 
 					<!-- ユーザー名のデータ -->
 					<label>ユーザー名</label><br>
