@@ -6,7 +6,7 @@
  <html lang="ja">
  <head>
  	<meta charset="utf-8">
- 	<title>チーム開発サンプル</title>
+ 	<title>はい、合致～!メイン画面</title>
  </head>
  <body>
  	<div>
