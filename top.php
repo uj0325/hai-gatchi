@@ -66,21 +66,8 @@
  	<div>
  		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
  		<script type="assets/js/bootstrap.js"></script>
-
- 		<?php //ヘッダー ?>
- 		<div  style="background-color: #d1ffa3;padding: 15px;position: fixed;top:0px;width:100%;z-index: 10;">
-	 		<div class="container" style="float: center;">
-	 			<div class="row">
-	 				<div class="col-lg-12">
-	 					<div style="font-size: 23px;color: #a3d1ff;font-weight: bold;">
-	 					  はい、合致～!!(๑•̀ㅂ•́)و✧
-	 					</div>
-	 				</div>
-	 			</div>
-	 		</div>
- 		</div>
  	
- 	<div style="position: absolute;top:100px;">
+ 	<div>
  		<!-- はい、合致とは～ -->
  		<div class="container">
  			<div class="row">
@@ -227,24 +214,6 @@
 		</div>
 
  	</div>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
- 		<br><br><br>
  		
- 	<div>
- 		<?php //フッターを呼び出す ?>
- 		<?php require('parts/footer.php') ?>
- 	</div>
- 
  </body>
  </html>
