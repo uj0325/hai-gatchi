@@ -104,9 +104,9 @@
 				</form>
 			 	</div>
 
-			 	<button type="button" class="btn btn-default btn-lg btn-block">
-			 		<a href="touroku.php">新規会員登録</a>
-			 	</button>
+			 	<a href="touroku.php" class="btn btn-default btn-lg btn-block">
+			 		新規会員登録
+			 	</a>
 					
 				</div>
 			</div>
