@@ -63,11 +63,11 @@
  		<!-- はい、合致とは～ -->
  		<div class="container">
  			<div class="row">
+ 				<br>
  				<h2 style="text-align: center">新規登録</h2>
 			 	<br>
-			 	<br>
 			 	<div class="col-lg-12" style="text-align: center;background-color: #e5fff2">
-			 		
+			 		<br>
 
 				    <form action=" " method="POST">
 				    
@@ -147,7 +147,7 @@
 					<br><br>
 					</form>
 					<br>
-					<br>
+					
 					
 				</div>
 			</div>
