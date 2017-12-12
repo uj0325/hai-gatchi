@@ -22,23 +22,25 @@
  	<script type="assets/js/bootstrap.js"></script>
  	
 	<div style="text-align: center">
-			<h1>入力内容確認</h1>
+			<h2>入力内容確認</h1>
 			<br>
 			<div class="container">
 				<div class="row">
 					<div  class="col-lg-12" style="background-color: #e5fff2;">
+						<br>
 						<?php
-						echo '<h3>ユーザーネーム:' . $username .'様</h3>';
-						echo '<h3>メールアドレス:' . $email .'</h3>';
-						echo '<h3>パスワード:ユーザー設定のパスワード</h3>'; 
+						echo '<h4>ユーザーネーム:' . $username .'様</h4>';
+						echo '<h4>メールアドレス:' . $email .'</h4>';
+						echo '<h4>パスワード:ユーザー設定のパスワード</h4>'; 
 						?>
+						<br>
 					</div>
 				</div>
 			</div>
 			<br>
 	
 			<?php if ($username != '' && $email != '' && $password != ''): ?>
-			<h4>こちらの内容で送信してもよろしいですか。</h4>
+			<h5>こちらの内容で送信してもよろしいですか。</h5>
 			<?php  endif;?>
 			<br>
 

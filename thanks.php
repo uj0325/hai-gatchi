@@ -59,6 +59,8 @@
 <body>
 
   <div style="text-align: center">
+    <br><br>
+    <br><br>
     <h1>新規会員登録ありがとうございました！</h1>
     <br>
     <a href="top.php">トップページに戻る</a>
