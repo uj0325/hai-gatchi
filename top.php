@@ -78,7 +78,7 @@
 			 		<div style="font-size: 25px;text-align: center">
 			 			<h4>ちょっと暇?急に暇?最速で暇人同士を「はい、合致～!」</h4>
 			 			<h4>独りが苦手なあなたの心のスキマ、お埋めします!</h4>
-			 			<br><br>
+			 			<br>
 			 		</div>
 			 	</div>
 
