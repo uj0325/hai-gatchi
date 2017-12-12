@@ -43,6 +43,7 @@
  	<div>
  		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
  		<script type="assets/js/bootstrap.js"></script>
+
  	
  		<?php if($top_flag == 0){ ?>
  		<!-- はい、合致とは～ -->
@@ -109,6 +110,9 @@
 					
 				</div>
 			</div>
+
+			
+
 			<?php } ?>
 
 			<?php 

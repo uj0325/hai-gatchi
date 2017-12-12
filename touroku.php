@@ -144,13 +144,13 @@
 					<br>
 					<!-- 送信ボタン -->
 					<input type="submit" value="登録確認画面へ">
-					<br>
+					<br><br>
 					</form>
+					<br>
+					<br>
 					
-				</div>	
+				</div>
 			</div>
-			<br><br>
-			<br><br>
 			<?php } ?>
 
 			<?php 
