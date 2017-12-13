@@ -7,7 +7,27 @@
 	$password_o ='';
 	$top_flag=0;
 
+	$dsn = 'mysql:dbname=hi_gatch;host=localhost';
+	$user = 'root';
+	$password = '';
+	$dbh = new PDO($dsn,$user,$password);
+	$dbh->query('SET NAMES utf8'); 
+
+	//Step2 : SQL文を記載する。
+	$sql = 'SELECT user_id,email,password FROM `gatch_users` WHERE 1';
+
+	//Step3 : SQLを実行する。
+	$data = array();
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute($data);
+
+	$rec = $stmt->fetchAll();
+	// $user_password=$rec[0]['password'];
+	// $user_email=$rec[0]['email';]
+
 	if(!empty($_POST)){
+
+		
 
 		$email_o=htmlspecialchars($_POST['email_o']);
 		$password_o=htmlspecialchars($_POST['password_o']);
@@ -24,6 +44,14 @@
 			$errors2['password_o']='blank';
 		}elseif(strlen($password_o) < 4){
 			$errors2['password_o']='length';
+		}
+
+		for($i=0;$i < count($rec);$i++){
+			if($rec[$i]['email'] == $email_o){
+				if($rec[$i]['password'] != $password_o){
+					$errors2['password_o']='match';
+				}
+			}
 		}
 
 		if(empty($errors2)){
@@ -97,9 +125,16 @@
 					</div>
 					<?php } ?>
 
+					<?php if(isset($errors2['password_o']) &&
+					$errors2['password_o'] == 'match'){ ?>
+					<div  class="alert alert-danger">
+						正しいパスワードを入力してください。
+					</div>
+					<?php } ?>
+
 					<br>
 					<!-- 送信ボタン -->
-					<input type="submit" value="メイン画面へ">
+					<input type="submit" value="ログイン">
 					<br><br>
 				</form>
 			 	</div>
