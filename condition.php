@@ -1,52 +1,51 @@
 <?php
 	//行数$iをしていして値を送る処理をする
-	
-	//すでに定義されている変数
+
 	//$email_o=htmlspecialchars($_POST['email_o']);
 	//$password_o=htmlspecialchars($_POST['password_o']);
-	//$i
-
 ?>
 
-<?php 
-	//test
-	//echo $i;
- ?>
 
  <?php 
-	//ログインページ
+	//ログイン後クッションページ
  ?>
  <?php 
 
 	$tubuyaki ='';
 	$gatch_condition = '';
-	$top_flag=0;
+	$condition_flag=0;
+	$top_flag=1;
 
-	if(!empty($_POST)){
+	if(!empty($_POST['user_id'])){
 
-		$tubuyaki=htmlspecialchars($_POST['tubuyaki']);
-		$gatch_condition=htmlspecialchars($_POST['gatch_condition']);
+			$user_id=htmlspecialchars($_POST['user_id']);
 
-		//エラー件数チェック
-		$errors = array();
+			//エラー件数チェック
+			$errors3 = array();
 
-		//バリデーション(検証)
-		if($tubuyaki == ''){
-			$errors['tubuyaki']='blank';
-		}
-		elseif(strlen($tubuyaki) > 21){
-			$errors['tubuyaki']='length';
-		}
-		if($gatch_condition == ''){
-			$errors['gatch_condition']='blank';
-		}
+			
+			$gatch_condition=htmlspecialchars($_POST['gatch_condition']);
+			$tubuyaki=htmlspecialchars($_POST['tubuyaki']);
 
-		
-		if(empty($errors)){
-			$top_flag=1;
-		}
-		
+			//バリデーション(検証)
+			if($tubuyaki == ''){
+				$errors3['tubuyaki']='blank';
+			}
+			elseif(strlen($tubuyaki) > 21){
+				$errors3['tubuyaki']='length';
+			}
+			if($gatch_condition == ''){
+				$errors3['gatch_condition']='blank';
+			}
+
+			
+			if(empty($errors3)){
+				$condition_flag=1;
+			}
+
+			
 	}
+
 
  ?>
 
@@ -61,7 +60,6 @@
  		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
  		<script type="assets/js/bootstrap.js"></script>
  	
- 		<?php if($top_flag == 0){ ?>
  		<!-- はい、合致とは～ -->
  		<div class="container">
  			<div class="row">
@@ -71,30 +69,38 @@
 			 	<div class="col-lg-12" style="text-align: center;background-color: #e5fff2">
 			 		<br>
 
-				    <form action=" " method="POST">
+			 		<?php if($condition_flag == 0){ ?>
+				    <form action="top.php" method="POST">
 				    
 					<!-- コンディションのデータ -->
 					<label>コンディション選択</label><br>
-					<input type="text" name="username" placeholder="例：トムトム"
-					value="<?php echo $username; ?>">
+					<input type="radio" name="gatch_condition" value="karaoke">カラオケ
+ 					<input type="radio" name="gatch_condition" value="nomikai">飲み会
+ 					<input type="radio" name="gatch_condition" value="drive">ドライブ
+ 					<input type="radio" name="gatch_condition" value="takunomi">宅飲み
+ 					<br>
+ 					<input type="radio" name="gatch_condition" value="otya">お茶
+ 					<input type="radio" name="gatch_condition" value="game">ゲーム
+ 					<input type="radio" name="gatch_condition" value="shopping">ショッピング
+ 					<input type="radio" name="gatch_condition" value="gohan">ご飯
+					<input type="radio" name="gatch_condition" value="sonota">その他
 					<br>
 					
-					<?php if(isset($errors['username']) && 
-					$errors['username'] == 'blank'){?>
+					<?php if(isset($errors3['gatch_condition']) && 
+					$errors3['gatch_condition'] == 'blank'){?>
 					<div class="alert alert-danger">
-						ユーザー名を入力してください。
+						１つ以上選択してください。
 					</div>
 					<?php } ?>
 					<br>
 
 					<!-- ２０文字のつぶやきのデータ -->
 					<label>つぶやき入力</label><br>
-					<input type="text" name="tubuyaki" 
-					placeholder="例：今夜は寝ないで遊ぶ!"
-					value="<?php echo $email; ?>">
+					<input type ="text" name="tubuyaki" size="35px"
+					placeholder="例：今夜は寝ないで遊ぶ!" value="<?php echo $tubuyaki; ?>">	
 					<br>
-					<?php if(isset($errors['tubuyaki']) && 
-					$errors['tubuyaki'] == 'blank'){?>
+					<?php if(isset($errors3['tubuyaki']) && 
+					$errors3['tubuyaki'] == 'blank'){?>
 					<div  class="alert alert-danger">
 						つぶやきを入力してください。<br>
 						※20文字以内でお願いします。
@@ -102,42 +108,74 @@
 					<?php } ?>
 					<br>
 
-					<?php if(isset($errors['tubuyaki']) &&
-					$errors['tubuyaki'] == 'length'){ ?>
+					<?php if(isset($errors3['tubuyaki']) &&
+					$errors3['tubuyaki'] == 'length'){ ?>
 					<div  class="alert alert-danger">
 						つぶやきは20文字以上を設定してください。
 					</div>
 					<?php } ?>
 					<br>
-
-					
-
-					<br><br>
 					<!-- 送信ボタン -->
-					<input type="submit" value="登録確認画面へ">
-					<br><br>
+					<input type="submit" value="GO!">
+					<br>
+
+					<!-- 隠しデータをformで送信する -->
+					<input type="hidden" name="user_password" 
+					value="<?php echo $rec[$i]['password']; ?>">
+					<input type="hidden" name="user_email" 
+					value="<?php echo $rec[$i]['email']; ?>">
+					<input type="hidden" name="user_id" 
+					value="<?php echo $rec[$i]['user_id']; ?>">
+					<input type="hidden" name="email_o" 
+					value="<?php echo $email_o; ?>">
+					<input type="hidden" name="password_o" 
+					value="<?php echo $password_o; ?>">
+
 					</form>
 					<br>
+					<?php } ?>
 					
+					// <?php if($condition_flag == 1){?>
+
+						<form method="POST" action="main.php">
+							
+							<!-- 隠しデータをformで送信する -->
+							<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+
+
+						</form>
+
+						<?php
+						$dsn = 'mysql:dbname=hi_gatch;host=localhost';
+		  				$user = 'root';
+						$password = '';
+						$dbh = new PDO($dsn,$user,$password);
+						$dbh->query('SET NAMES utf8'); 
+
+						$sql = 'UPDATE `gatch_users` SET
+		                      `login`=?,
+		                      `picture`=?,
+		                      `gatch_condition`=?,
+		                      `tubuyaki`=?, 
+		                      WHERE
+		                      `user_id`=?;
+		                ';
+
+						$data = array(1,'icon_template.jpg',$gatch_condition,$tubuyaki,$user_id);
+						//SQL文を実行する準備を行う
+						$stmt = $dbh->prepare($sql);
+						//SQL文を実行する(?マークを上書きして実行)
+						$stmt->execute($data);
+
+						header('location:main.php');
+						exit();
+
+					} ?>
 					
 				</div>
 			</div>
-			<?php } ?>
-
-			<?php 
-				if($top_flag == 1){
-					require('check.php');
-				}
-				
-			 ?>
 		
  	</div>
  		
  </body>
  </html>
-
-
-
-
-
-

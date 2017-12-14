@@ -1,5 +1,6 @@
 <?php 
 	//メインページ
+	$user_id=htmlspecialchars($_POST['user_id']);
  ?>
 
  <!DOCTYPE html>

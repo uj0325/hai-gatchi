@@ -7,6 +7,7 @@
 	$password_o ='';
 	$top_flag=0;
 
+
 	$dsn = 'mysql:dbname=hi_gatch;host=localhost';
 	$user = 'root';
 	$password = '';
@@ -46,12 +47,20 @@
 			$errors2['password_o']='length';
 		}
 
+		//メアドをDBの値と照合する
+		$errors_count=0;
 		for($i=0;$i < count($rec);$i++){
 			if($rec[$i]['email'] == $email_o){
 				if($rec[$i]['password'] != $password_o){
 					$errors2['password_o']='match';
 				}
+			}else{
+				$errors_count++;
 			}
+		}
+
+		if($errors_count == count($rec)){
+			$errors2['email_o']='match';
 		}
 
 		if(empty($errors2)){
@@ -92,7 +101,7 @@
 			 		<h2>会員ログイン</h2>
 			 		<br>
 
-				    <form action=" " method="POST">
+				    <form action="top.php" method="POST">
 
 					<!-- メールアドレスのデータ -->
 					<label>メールアドレス</label><br>
@@ -103,6 +112,13 @@
 					$errors2['email_o'] == 'blank'){?>
 					<div  class="alert alert-danger">
 						メールアドレスを入力してください。
+					</div>
+					<?php } ?>
+					<br>
+					<?php if(isset($errors2['email_o']) && 
+					$errors2['email_o'] == 'match'){?>
+					<div  class="alert alert-danger">
+						このメールアドレスは登録されていません。
 					</div>
 					<?php } ?>
 					<br>
