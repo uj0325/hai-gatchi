@@ -7,22 +7,22 @@
 	 			<div class="row">
 	 				<div class="col-lg-3">
 	 					<div style="font-size: 23px">
-	 					  <a href="#">はい、合致～!!(๑•̀ㅂ•́)و✧</a>
+	 					  <a href="main.php">はい、合致～!!(๑•̀ㅂ•́)و✧</a>
 	 					</div>
 	 				</div>
 	 				<div class="col-lg-2 col-lg-offset-3">
 	 					<div style="padding:5px;font-size: 20px;text-align: center">
-	 					  <a href="">マイページ</a>
+	 					  <a href="mypage.php">マイページ</a>
 	 					</div>
 	 				</div>
 	 				<div class="col-lg-2">
 	 					<div style="padding:5px;font-size: 20px;text-align: center">
-	 					  <a href="">設定</a>
+	 					  <a href="set.php">設定</a>
 	 					</div>
 	 				</div>
 	 				<div class="col-lg-2 ">
 	 					<div style="padding:5px;font-size: 20px;text-align: center">
-	 					  <a href="">log out</a>
+	 					  <a href="top.php">log out</a>
 	 					</div>
 	 				</div>
 	 			</div>

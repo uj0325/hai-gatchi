@@ -19,7 +19,7 @@
  	
  	<div style="position: absolute;top:100px;left: 10px;">
  		メインページのコンテンツです。<br>
- 		<?php echo $_SESSION['user_id']; ?>
+ 		<?php echo 'ログイン中のユーザーIDは「' . $_SESSION['user']['user_id'] . '」です。'; ?>
  		<br><br><br>
  		<br><br><br>
  		<br><br><br>

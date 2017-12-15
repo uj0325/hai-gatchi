@@ -64,6 +64,7 @@
 		}
 
 		if(empty($errors2)){
+			
 		// tomtom cord
 		$sql = 'SELECT user_id,email,password FROM `gatch_users` WHERE email=? AND password=?';
 
