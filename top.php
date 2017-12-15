@@ -2,7 +2,7 @@
 	//ログインページ
  ?>
  <?php 
-
+ 	session_start();
 	$email_o ='';
 	$password_o ='';
 	$top_flag=0;
@@ -64,6 +64,18 @@
 		}
 
 		if(empty($errors2)){
+		// tomtom cord
+		$sql = 'SELECT user_id,email,password FROM `gatch_users` WHERE email=? AND password=?';
+
+		//Step3 : SQLを実行する。
+		$data = array($email_o,$password_o);
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute($data);
+
+		$rec = $stmt->fetchAll();
+		$_SESSION['login']=$rec[0];
+
+		
 			$top_flag=1;
 		}
 	}
@@ -168,8 +180,8 @@
 
 			<?php 
 				if($top_flag == 1){
-					
-					require('condition.php');
+					header('location:condition.php');
+					exit();
 				}
 				
 			 ?>

@@ -1,6 +1,8 @@
 <?php 
+	session_start();
 	//メインページ
-	$user_id=htmlspecialchars($_POST['user_id']);
+	//$user_id=$_SESSION['user_info']['user_id'];
+
  ?>
 
  <!DOCTYPE html>
@@ -17,6 +19,7 @@
  	
  	<div style="position: absolute;top:100px;left: 10px;">
  		メインページのコンテンツです。<br>
+ 		<?php echo $_SESSION['user_id']; ?>
  		<br><br><br>
  		<br><br><br>
  		<br><br><br>

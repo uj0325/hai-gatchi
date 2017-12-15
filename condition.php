@@ -1,28 +1,24 @@
 <?php
-	//行数$iをしていして値を送る処理をする
-
-	//$email_o=htmlspecialchars($_POST['email_o']);
-	//$password_o=htmlspecialchars($_POST['password_o']);
+	session_start();
 ?>
-
 
  <?php 
 	//ログイン後クッションページ
  ?>
  <?php 
-
 	$tubuyaki ='';
 	$gatch_condition = '';
-	$condition_flag=0;
 	$top_flag=1;
 
-	if(!empty($_POST['user_id'])){
+	$password_o=$_SESSION['login']['password'];
+	$email_o=$_SESSION['login']['email'];
+	$user_id=$_SESSION['login']['user_id'];
 
-			$user_id=htmlspecialchars($_POST['user_id']);
+	$condition_flag=0;
 
+	if(!empty($_POST)){
 			//エラー件数チェック
 			$errors3 = array();
-
 			
 			$gatch_condition=htmlspecialchars($_POST['gatch_condition']);
 			$tubuyaki=htmlspecialchars($_POST['tubuyaki']);
@@ -42,8 +38,6 @@
 			if(empty($errors3)){
 				$condition_flag=1;
 			}
-
-			
 	}
 
 
@@ -70,7 +64,7 @@
 			 		<br>
 
 			 		<?php if($condition_flag == 0){ ?>
-				    <form action="top.php" method="POST">
+				    <form action="condition.php" method="POST">
 				    
 					<!-- コンディションのデータ -->
 					<label>コンディション選択</label><br>
@@ -119,33 +113,12 @@
 					<input type="submit" value="GO!">
 					<br>
 
-					<!-- 隠しデータをformで送信する -->
-					<input type="hidden" name="user_password" 
-					value="<?php echo $rec[$i]['password']; ?>">
-					<input type="hidden" name="user_email" 
-					value="<?php echo $rec[$i]['email']; ?>">
-					<input type="hidden" name="user_id" 
-					value="<?php echo $rec[$i]['user_id']; ?>">
-					<input type="hidden" name="email_o" 
-					value="<?php echo $email_o; ?>">
-					<input type="hidden" name="password_o" 
-					value="<?php echo $password_o; ?>">
-
 					</form>
 					<br>
 					<?php } ?>
 					
-					// <?php if($condition_flag == 1){?>
+					<?php if($condition_flag == 1){
 
-						<form method="POST" action="main.php">
-							
-							<!-- 隠しデータをformで送信する -->
-							<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-
-
-						</form>
-
-						<?php
 						$dsn = 'mysql:dbname=hi_gatch;host=localhost';
 		  				$user = 'root';
 						$password = '';
@@ -156,8 +129,8 @@
 		                      `login`=?,
 		                      `picture`=?,
 		                      `gatch_condition`=?,
-		                      `tubuyaki`=?, 
-		                      WHERE
+		                     `tubuyaki`=? 
+		                       WHERE
 		                      `user_id`=?;
 		                ';
 
@@ -166,6 +139,8 @@
 						$stmt = $dbh->prepare($sql);
 						//SQL文を実行する(?マークを上書きして実行)
 						$stmt->execute($data);
+
+						$_SESSION['user']['user_id']=$user_id;
 
 						header('location:main.php');
 						exit();
