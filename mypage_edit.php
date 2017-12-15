@@ -1,40 +1,44 @@
-<?php
+<?php 
+	//マイページ編集画面
 	session_start();
-	if(!isset($_SESSION['login'])){
-		header('Location:top.php');
-		exit();
-	}
-?>
-
- <?php 
-	//ログイン後クッションページ
+	
+	$user_id=$_SESSION['mydate']['user_id'];
+	$user_password=$_SESSION['mydate']['user_password'];
+	$user_email=$_SESSION['mydate']['user_email'];
+	$user_name=$_SESSION['mydate']['user_name'];
+	$picture=$_SESSION['mydate']['picture'];
+	$gatch_condition=$_SESSION['mydate']['gatch_condition'];
+	$tubuyaki=$_SESSION['mydate']['tubuyaki'];
+	
  ?>
+
  <?php 
 	$tubuyaki ='';
 	$gatch_condition = '';
-	$top_flag=1;
+	$email='';
+	$picture='';
+	$password='';
 
-	$password_o=$_SESSION['login']['password'];
-	$email_o=$_SESSION['login']['email'];
-	$user_id=$_SESSION['login']['user_id'];
-
-	$condition_flag=0;
+	$edit_flag=0;
 
 	if(!empty($_POST)){
 			//エラー件数チェック
 			$errors3 = array();
 			
-			$gatch_condition=htmlspecialchars($_POST['gatch_condition']);
-			$tubuyaki=htmlspecialchars($_POST['tubuyaki']);
+			$new_gatch_condition=htmlspecialchars($_POST['gatch_condition']);
+			$new_tubuyaki=htmlspecialchars($_POST['tubuyaki']);
+			$new_email=htmlspecialchars($_POST['email']);
+			$new_picture=htmlspecialchars($_POST['picture']);
+			$new_password=htmlspecialchars($_POST['password'])
 
 			//バリデーション(検証)
-			if($tubuyaki == ''){
+			if($new_tubuyaki == ''){
 				$errors3['tubuyaki']='blank';
 			}
 			elseif(strlen($tubuyaki) > 21){
 				$errors3['tubuyaki']='length';
 			}
-			if($gatch_condition == ''){
+			if($new_gatch_condition == ''){
 				$errors3['gatch_condition']='blank';
 			}
 
@@ -57,8 +61,7 @@
  	<div>
  		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
  		<script type="assets/js/bootstrap.js"></script>
- 	
- 		<!-- はい、合致とは～ -->
+
  		<div class="container">
  			<div class="row">
  				<br>
@@ -67,8 +70,8 @@
 			 	<div class="col-lg-12" style="text-align: center;background-color: #e5fff2">
 			 		<br>
 
-			 		<?php if($condition_flag == 0){ ?>
-				    <form action="condition.php" method="POST">
+			 		<?php if($edit_flag == 0){ ?>
+				    <form action="myid.php" method="POST">
 				    
 					<!-- コンディションのデータ -->
 					<label>コンディション選択</label><br>
@@ -121,7 +124,7 @@
 					<br>
 					<?php } ?>
 					
-					<?php if($condition_flag == 1){
+					<?php if($edit_flag == 1){
 
 						$dsn = 'mysql:dbname=hi_gatch;host=localhost';
 		  				$user = 'root';

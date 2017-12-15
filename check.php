@@ -31,8 +31,12 @@
 						<?php
 						echo '<h4>ユーザーネーム:' . $username .'様</h4>';
 						echo '<h4>メールアドレス:' . $email .'</h4>';
-						echo '<h4>パスワード:ユーザー設定のパスワード</h4>'; 
+						echo '<h4>パスワード:'; 
 						?>
+						<?php for($i=0; $i<strlen($password);$i++){
+ 							echo '●';
+ 						} ?>
+ 						</h4>
 						<br>
 					</div>
 				</div>
