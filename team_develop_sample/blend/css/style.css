@@ -130,7 +130,7 @@ figure figcaption {
   top: 0;
   left: 0;
   overflow-y: scroll;
-  background-color:#696868;
+  background-color: #696868;
   z-index: 1001;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
@@ -148,7 +148,7 @@ figure figcaption {
 @media screen and (max-width: 1200px) {
   #fh5co-aside {
     width: 30%;
-   background-color:#696868;
+   background-color: #696868;
   }
 }
 @media screen and (max-width: 768px) {
@@ -159,7 +159,7 @@ figure figcaption {
     -ms-transform: translateX(-270px);
     -o-transform: translateX(-270px);
     transform: translateX(-270px);
-    background-color:#696868;
+    background-color: #696868;
   }
 }
 
@@ -256,7 +256,6 @@ figure figcaption {
   width: 100%;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.6);
-
 }
 @media screen and (max-width: 768px) {
   #fh5co-aside .fh5co-footer {
