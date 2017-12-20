@@ -99,11 +99,34 @@ figure figcaption {
 }
 
 #upper img{
-  width:150px;
+  /*width:150px;
   height:50px;
   margin-top: 20px;
-  margin-left:650px; 
+  margin-left:650px; */
   /*padding-bottom: 50px;*/
+  position: absolute;
+  left: 150px;
+  right: 0px;
+  top: 0px;
+  /*bottom: 0px;*/
+  margin: auto;
+
+  width:150px;
+  height:80px;
+}
+
+@media(max-width: 480px){
+  #upper img{
+     position: absolute;
+  left: 150px;
+  right: 0px;
+  top: 0px;
+  /*bottom: 0px;*/
+  margin: auto;
+
+  width:100px;
+  height:80px;
+  }
 }
 
 /*#adjustment-for-upper{
@@ -113,6 +136,7 @@ figure figcaption {
   width: 190px;
   height:142px;
 }*/
+
 
 
 #fh5co-page {
@@ -305,7 +329,7 @@ figure figcaption {
 }
 @media screen and (max-width: 768px) {
   #fh5co-main {
-    width: 100%;
+    /*width: 100%;*/
   }
 }
 #fh5co-main .fh5co-narrow-content {
@@ -368,6 +392,7 @@ figure figcaption {
 @media screen and (max-width: 480px) {
   .fh5co-gallery .gallery-item {
     width: 100%;
+    /*display: none;*/
   }
 }
 .fh5co-gallery .gallery-item .overlay {
