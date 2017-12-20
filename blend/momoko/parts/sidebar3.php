@@ -5,7 +5,7 @@
  		<div  style="background-color: #f5f5f5;position: fixed;left:0px;width:15%;height:100%;z-index: 10;">
 	 					
 	 			<div style="padding:5px;text-align: center">
-	 				<img src="parts_image/gatchi_logo.gif" width="120px">
+	 				<img src="../images/gatchi_logo88.gif" width="100%">
 	 			</div>
 	 			<br>
 	 			<div style="padding:5px;font-size: 20px;text-align: center">
