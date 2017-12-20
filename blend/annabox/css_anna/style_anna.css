@@ -141,7 +141,9 @@ MyprofileCSS*/
 }
 
 #edit-btn{
-  padding-top: 30px;
+  padding-top: 20px;
+/*  width:10px;
+  height:5px;*/
 }
 
 
@@ -393,6 +395,14 @@ MyprofileCSS*/
   padding-top: 240px;
   font-size: 6px;
 
+}
+
+#ranking{
+  width:auto;
+  height:200px;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 20px;
 }
 
 
@@ -1478,7 +1488,6 @@ left:75%;
   height:30px;
   width:30px;
 }
-
 
 
 
