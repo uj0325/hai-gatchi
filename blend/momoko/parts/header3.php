@@ -5,7 +5,7 @@
 	 	<div style="background-color: white;padding:5px;text-align: center">
 			<div>
 					<div>
-						<img src="../kai/images/header_asset02.jpg" style="width: 200px">
+						<img src="parts_image/header_asset03.jpg" style="width: 200px">
 					</div>
 			</div>
 		</div>

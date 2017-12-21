@@ -14,8 +14,8 @@
  	<link href="assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../kai/kai_style.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/chart.js"></script>
@@ -140,10 +140,10 @@
 
  	<script type="text/javascript">
  		var me = {};
-		me.avatar = "../kai/images/76900.jpg";
+		me.avatar = "profile_image/icon_template.jpg";
 
 		var you = {};
-		you.avatar = "../kai/images/IMG_8529.jpg";
+		you.avatar = "profile_image/icon_template.jpg";
 
 		function formatAMPM(date) {
 		    var hours = date.getHours();
