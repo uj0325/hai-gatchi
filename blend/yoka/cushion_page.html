@@ -60,9 +60,9 @@
 	<h1>今のあなたの気分は？</h1>
 	<p>３つまで選択できます。</p>
 
-	<div class="condition-btn">
+	<!-- <div class="condition-btn"> -->
 		
-		<img src="../images/drink_green_btn3.gif" class="individual" >
+		<!-- <img src="../images/drink_green_btn3.gif" class="individual" >
 		<img src="../images/drive_green_btn3.gif" class="individual">
 		<img src="../images/drinkathome_green_btn3.gif" class="individual">
 		<br>
@@ -73,11 +73,171 @@
 		<br>
 		<img src="../images/shopping_green_btn3.gif" class="individual">
 		<img src="../images/karaoke_green_btn.gif" class="individual">
-		<img src="../images/other_green_btn3.gif" class="individual">
+		<img src="../images/other_green_btn3.gif" class="individual"> -->
 
-	</div>
 	
+	<!-- 試し -->
+	<!-- <div class="checkbox02"> -->
+  <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/drink_green_btn3.gif" class="individual" id="test" onclick="tom()"></span>
+  </label>
+  <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/drive_green_btn3.gif" class="individual" id="test2" onclick="tom2()"></span>
+  </label>
+  <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/drinkathome_green_btn3.gif" class="individual" id="test3" onclick="tom3()"></span>
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/game_green_btn3.gif" class="individual" id="test4" onclick="tom4()"></span>
+  </label>
+
+   <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/cafe_green_btn3.gif" class="individual" id="test5" onclick="tom5()"></span>
+  </label>
+
+  <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/meal_green_btn3.gif" class="individual" id="test6" onclick="tom6()"></span>
+  </label>
+  <br>
+
+  <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/shopping_green_btn3.gif" class="individual" id="test7" onclick="tom7()"></span>
+  </label>
+
+    <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/karaoke_green_btn.gif" class="individual" id="test8" onclick="tom8()"></span>
+  </label>
+
+    <label>
+    <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
+    <span class="checkbox01-parts"><img src="../images/other_green_btn3.gif" class="individual" id="test9" onclick="tom9()"></span>
+  </label>
+
+
+<script type="text/javascript">
+	function tom(){		
+		var test = document.getElementById('test');
+		if ( document.getElementById("test").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+		function tom2(){		
+		var test = document.getElementById('test2');
+		if ( document.getElementById("test2").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+	function tom3(){		
+		var test = document.getElementById('test3');
+		if ( document.getElementById("test3").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+
+	function tom4(){		
+		var test = document.getElementById('test4');
+		if ( document.getElementById("test4").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+	function tom5(){		
+		var test = document.getElementById('test5');
+		if ( document.getElementById("test5").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+	function tom6(){		
+		var test = document.getElementById('test6');
+		if ( document.getElementById("test6").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+	function tom7(){		
+		var test = document.getElementById('test7');
+		if ( document.getElementById("test7").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+	function tom8(){		
+		var test = document.getElementById('test8');
+		if ( document.getElementById("test8").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+	function tom9(){		
+		var test = document.getElementById('test9');
+		if ( document.getElementById("test9").classList.contains('individual') ){
+			test.classList.remove('individual');	
+			test.classList.add('tomtom');		
+		}else{
+			test.classList.remove('tomtom');	
+			test.classList.add('individual');		
+		}
+	}
+
+
+	// $(function()){
+	// 	$('.individual').click(function()){
+	// 		$(this).css(
+ //    'transform', 'translateY(4px)'/*下に動く*/)
+	// 	}
+	// });
+
+
+
+</script>
 </div>
+
+<!-- 試し -->
 
 <div id="tsubuyaki-container">
 	<h1>とりあえずつぶやいておきましょう</h1>
