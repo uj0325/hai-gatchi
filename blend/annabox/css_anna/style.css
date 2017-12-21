@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'arial';
-/*  src:local('../fonts/YuNaFont_0105');*/
-/*    src:    url('../fonts/YuNaFont_0105/YuNaFont_P.ttf?195opb') ;
-    src:    url('../fonts/YuNaFont_0105/YuNaFont.ttf?195opb#iefix') ;*/
+  font-family: 'yunafont';
+  src:local('../fonts/YuNaFont_0105');
+    src:    url('../fonts/YuNaFont_0105/YuNaFont_P.ttf?195opb') ;
+    src:    url('../fonts/YuNaFont_0105/YuNaFont.ttf?195opb#iefix') ;
   /*font-family: 'icomoon';*/
   /*src: url("../fonts/icomoon/icomoon.eot?srf3rx");
   src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");*/
   font-weight: normal;
-  font-style: normal; 
+  font-style: normal;
 }
 
 
@@ -19,12 +19,12 @@
 *
 * ======================================================= */
 body {
-  font-family:'arial', sans-serif;
+  font-family: yunafont, sans-serif;
   font-weight: 300;z-index: 
   font-size: 20px;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.5);
-  background: white;
+  background: #e6e6e6;
 }
 @media screen and (max-width: 992px) {
   body {
@@ -165,6 +165,7 @@ MyprofileCSS*/
   top: 0;
   left: 0;
   overflow-y: scroll;
+  /*background: #e6e6e6;*/
   background-color: #696868;
   z-index: 1001;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
@@ -183,7 +184,7 @@ MyprofileCSS*/
 @media screen and (max-width: 1200px) {
   #fh5co-aside {
     width: 30%;
-   background-color: #696868;
+   
   }
 }
 @media screen and (max-width: 768px) {
@@ -194,7 +195,6 @@ MyprofileCSS*/
     -ms-transform: translateX(-270px);
     -o-transform: translateX(-270px);
     transform: translateX(-270px);
-    background-color: #696868;
   }
 }
 
@@ -296,7 +296,6 @@ MyprofileCSS*/
   #fh5co-aside .fh5co-footer {
     position: relative;
     bottom: 0;
-    background-color: #696868;
   }
 }
 #fh5co-aside .fh5co-footer span {
@@ -420,7 +419,7 @@ MyprofileCSS*/
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-/*.fh5co-gallery .gallery-item .overlay h2, .fh5co-gallery .gallery-item .overlay span {
+.fh5co-gallery .gallery-item .overlay h2, .fh5co-gallery .gallery-item .overlay span {
   position: relative;
   z-index: 12;
   margin-bottom: 0;
@@ -429,18 +428,18 @@ MyprofileCSS*/
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-}*/
-/*.fh5co-gallery .gallery-item .overlay h2 {
+}
+.fh5co-gallery .gallery-item .overlay h2 {
   color: #fff;
   font-size: 26px;
   font-weight: 300;
   margin-bottom: 10px;
   bottom: -15px;
-}*/
+}
 @media screen and (max-width: 768px) {
-/*  .fh5co-gallery .gallery-item .overlay h2 {
+  .fh5co-gallery .gallery-item .overlay h2 {
     font-size: 18px;
-  }*/
+  }
 }
 .fh5co-gallery .gallery-item .overlay span {
   color: #7ac143;
@@ -484,9 +483,9 @@ MyprofileCSS*/
   right: 0;
   background: rgba(0, 0, 0, 0.5);
 }
-/*.fh5co-gallery .gallery-item:hover .overlay h2 {
+.fh5co-gallery .gallery-item:hover .overlay h2 {
   bottom: 0px;
-}*/
+}
 .fh5co-gallery .gallery-item:hover .overlay span {
   visibility: visible;
   opacity: 1;
@@ -503,7 +502,7 @@ body.offcanvas #fh5co-aside {
   -o-transform: translateX(0);
   transform: translateX(0);
   width: 270px;
-  background:#696868;
+  background: #fff;
   z-index: 999;
   position: fixed;
 }
@@ -703,9 +702,9 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   }
 }
 .fh5co-counter .fh5co-text {
-  text-align: center;
+  float: right;
+  text-align: left;
   width: 70%;
-  float:left;
 }
 @media screen and (max-width: 768px) {
   .fh5co-counter .fh5co-text {
@@ -779,16 +778,16 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 }
 
 .fh5co-feature {
-  background-color:#696969;
+  text-align: left;
   width: 100%;
-  height:90px;
   float: left;
   padding: 20px;
-  margin-bottom:20px;
-  position:relative;
 }
 .fh5co-feature .fh5co-icon {
   float: left;
+  width: 10%;
+  display: block;
+  margin-top: 5px;
 }
 .fh5co-feature .fh5co-icon i {
   color: #7ac143;
@@ -809,8 +808,8 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   }
 }
 .fh5co-feature .fh5co-text {
-  float: left;
-  width: 100%;
+  float: right;
+  width: 80%;
 }
 @media screen and (max-width: 768px) {
   .fh5co-feature .fh5co-text {
@@ -1335,103 +1334,3 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 }
 
 /*# sourceMappingURL=style.css.map */
-
-/*ここから追加したCSS*/
-/*ここから暇人一覧*/
-.himajin-content{
-  position:relative;
-}
-.myname{
-  position: absolute;
-  top: 0;/*画像の左上に配置*/
-  left: 0;
-  margin: 0; /*余計な隙間を除く*/
-  color:#00ff00 ;/*文字を緑に*/
-  background:rgba(0,0,0,0.7);/*背景色*/
-  font-size: 15px;
-  line-height: 1;/*行高は1に*/
-  padding: 5px 10px;/*文字周りの余白*/
-  width:100%;
-  text-align:center;
-
-}
-
-.feeling{
-  position: absolute;
-  bottom:0%;
-  margin: 0; /*余計な隙間を除く*/
-  color: white;/*文字を白に*/
-  background: black;/*背景色*/
-  font-size: 15px;
-  line-height: 1;/*行高は1に*/
-  padding: 5px 10px;/*文字周りの余白*/
-  width:100%;
-  text-align:center;
-}
-/*ここまで暇人一覧*/
-/*ここからオススメ＆リクエストユーザー*/
-.change-user{
-  text-align:center;
-}
-.change-btn{
-  padding-top:50px;
-}
-
-.osusume-user-img{
-  height:90px;
-  width:90px;
-  position:absolute;
-  top:0;
-  left:0;
-}
-.osusume-user-name{
-  color:#00ff00 ;
-  padding:0px;
-  margin:0px;
-  position:absolute;
-  top:0;
-  left:25%;
-}
-.osusume-user-feeling{
-  font-size:6px;
-  color:white;
-  padding:0px;
-  margin:0px;
-  position:absolute;
-  top:30%;
-  left:25%;
-}
-.stamp-container{
-  height:30px;
-  float:left;
-  position:absolute;
-  bottom:0;
-  left:25%;
-  margin:0px;
-  padding:0px;
-}
-.osusume-user-stamp{
-height:30px;
-width:30px;
-}
-.request-container{
-position:absolute;
-bottom:0;
-left:75%;
-}
-.osusume-user-request{
-  font-size:6px;
-  color:#00ff00 ;
-  padding:0px;
-  margin:0px;
-}
-
-
-
-
-
-
-
-
-
-
