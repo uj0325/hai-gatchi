@@ -2,6 +2,7 @@
 	session_start();
 	$user_id=$_SESSION['user']['user_id'];
 	$friendid=$_SESSION['friendid'];
+	$time_now=$_SESSION['time_now'];
 	//echo $user_id . '<br>';
 	//echo $friendid;
 
@@ -73,6 +74,7 @@
 				<form action="friend_tuika_db.php" method="POST">
 					<input type="hidden" name="user_id" value="<?php echo $user_id ?>">
 					<input type="hidden" name="friendid" value="<?php echo $friendid ?>">
+					<input type="hidden" name="time_now" value="<?php echo $time_now ?>">
 			
 					<button class="btn btn-success" type="submit" style="float:right;margin: 20px 60px;">
 				    	間違いないです

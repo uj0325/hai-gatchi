@@ -7,12 +7,13 @@
 	$dbh = new PDO($dsn,$user,$password);
 	$dbh->query('SET NAMES utf8'); 
 
-	$sql = 'UPDATE `gatch_idlist` SET `friend_id`=? WHERE `user_id`=? LIMIT 1;';
+	$sql = 'UPDATE `gatch_idlist` SET `friend_id`=? WHERE `user_id`=? AND `created`>? LIMIT 1;';
 
 	$user_id=htmlspecialchars($_POST['user_id']);
 	$friend_id=htmlspecialchars($_POST['friendid']);
+	$time_now=htmlspecialchars($_POST['time_now']);
 
-	$data = array($user_id,$friend_id);
+	$data = array($user_id,$friend_id,$time_now);
 	//SQL文を実行する準備を行う
 	$stmt = $dbh->prepare($sql);
 	//SQL文を実行する(?マークを上書きして実行)
