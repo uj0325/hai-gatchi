@@ -1,7 +1,6 @@
 <?php 
 	session_start();
-	date_default_timezone_set('Asia/Tokyo');
-
+	//メインページ
 	$user_id=$_SESSION['user']['user_id'];
 
 	$friend_id='';
@@ -14,7 +13,7 @@
 	$dbh->query('SET NAMES utf8'); 
 
 	//Step2 : SQL文を記載する。
-	$sql = 'SELECT `user_id`,`created` FROM `gatch_idlist` WHERE `friend_id`=0';
+	$sql = 'SELECT `user_id` FROM `gatch_idlist` WHERE `friend_id`=0';
 
 	//Step3 : SQLを実行する。
 	$data = array();
@@ -22,7 +21,7 @@
 	$stmt->execute($data);
 
 	$rec = $stmt->fetchAll();
-	
+
 
 	if(!empty($_POST)){
 
@@ -30,28 +29,16 @@
 		//$friend_idから友人のidのみを取得
 		$friendid=explode("_", $friend_id);
 
-
 		//エラー件数チェック
 		$errors = array();
 
 		//バリデーション(検証)
 		$count_match=0;
-		$count_time_a=0;
-		$count_time_b=0;
-
-		$time_now=date("Y-m-d H:i:s", strtotime('-1 day'));
-
 		//友人のidをDBの値と照合する
 		for($i=0;$i < count($rec);$i++){
 			$tuika_friend=$rec[$i]['user_id'];
-			$created_time=$rec[$i]['created'];
 			if($tuika_friend != $friendid[0]){
 					$count_match++;
-			}elseif($tuika_friend == $friendid[0]){
-					$count_time_a++;
-				if($time_now>$created_time){
-					$count_time_b++;
-				}
 			}
 		}
 
@@ -59,8 +46,6 @@
 			$errors['friend_id']='blank';
 		}elseif($count_match == count($rec)){
 			$errors['friend_id']='match';
-		}elseif ($count_time_b == $count_time_a) {
-			$errors['friend_id']='time';
 		}
 
 		if(empty($errors)){
@@ -68,7 +53,6 @@
 		//本当に友人だったら追加という風にする
 		$_SESSION['friendid']=$friendid[0];
 		$_SESSION['user']['user_id']=$user_id;
-		$_SESSION['time_now']=$time_now;
 
 		$tuika_flag=1;
 		}
@@ -122,11 +106,6 @@
 							友人のidが間違っています。
 						</div>
 						<?php } ?>
-						<?php if(isset($errors['friend_id']) && $errors['friend_id'] == 'time'){?>
-						<div  class="alert alert-danger">
-							このIDは有効時間がもう過ぎています。
-						</div>
-						<?php } ?>
 
 						<button type="submit" class="btn btn-success">送信</button>
 					</form>
@@ -135,7 +114,6 @@
 				<br>
 				<h5>マイIDを友達に教えることで「はい、合致～」の友達追加ができます。</h5>
 				<h6>※マイIDは友達一人につき一つ必要です。</h6>
-				<h6>※友人追加はマイID発行後24時間以内にする必要があります。</h6>
 		</div>
 		<?php } ?>
 
