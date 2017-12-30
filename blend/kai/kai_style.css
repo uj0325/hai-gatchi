@@ -115,17 +115,17 @@ figure figcaption {
   height:80px;
 }
 
-@media(max-width: 480px){
+@media(max-width: 768px){
   #upper img{
-     position: absolute;
-  left: 150px;
+  position: absolute;
+  left: 40px;
   right: 0px;
   top: 0px;
   /*bottom: 0px;*/
   margin: auto;
 
   width:100px;
-  height:80px;
+  height:60px;
   }
 }
 
@@ -171,7 +171,7 @@ figure figcaption {
 }
 @media screen and (max-width: 1200px) {
   #fh5co-aside {
-    width: 30%;
+    width: 20%;
    background-color: #696868;
   }
 }
