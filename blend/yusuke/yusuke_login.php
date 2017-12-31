@@ -77,11 +77,14 @@
 	</div>
 
 
-	<?php 
 
-	require('../profile _image/dbconnect.php'); 
+	<footer style="width: 100%; background-color: #f8f2f2 ; float: left; padding-bottom: 20px;" >
+	       <?php 
 
-	?>
+		require('../footer.html'); 
+
+		?>
+    </footer>
 
 
 </body>
