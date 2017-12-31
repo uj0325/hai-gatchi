@@ -77,15 +77,12 @@
 	</div>
 
 
-	<footer style="width: 100%; background-color: #f8f2f2; float: left; padding-bottom: 20px;" >
-		<div style="float: right;">
-			<ul style="list-style: none; padding-right: 30px">
-				<li style="float: left; margin-right: 30px;"><a href="">個人情報保護方針</a></li>
-				<li style="float: left; margin-right: 30px;"><a href="">運営者情報</a></li>
-				<li style="float: left; margin-right: 30px;"><a href="">利用規約</a></li>
-				<li style="float: left; margin-right: 30px;"><a href="">ヘルプ</a></li>
-			</ul>
-		</div>
-	</footer>
+	<?php 
+
+	require('../profile _image/dbconnect.php'); 
+
+	?>
+
+
 </body>
 </html>
