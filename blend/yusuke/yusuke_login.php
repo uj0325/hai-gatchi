@@ -43,11 +43,11 @@
 		<div class="form" style="padding-left: 400px; padding-top: 30px; margin-top: 100px">
 			<div class="login" style="margin-right: 25px; background-color: #f8f2f2; padding: 0 20px;">
 				<p>「はい、合致～」会員ログイン</p>
-				<form action="../yoka/cushion_page.html" method="POST">
+				<form action="../yoka/cushion_page.php" method="POST">
 					<input type="text" placeholder="メールアドレス" style="width: 250px; height: 30px; margin-bottom: 20px;"><br>
 					<input type="password" placeholder="パスワード" style="width: 250px; height: 30px; margin-bottom: 20px;"><br>
 
-					<a href="../yoka/cushion_page.html">
+					<a href="../yoka/cushion_page.php">
 						<img src="../images/login_button.jpg" type="submit" style="width: 200px; height: 30px; margin-bottom: 15px;">
 					</a>
 					<!-- <input type="submit" value ="ログイン" style="width: 250px; height: 30px; margin-bottom: 20px;"> -->
