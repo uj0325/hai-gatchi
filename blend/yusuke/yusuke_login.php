@@ -44,7 +44,7 @@
 
 			<div class="resister box">
 				<div class="resister-input">
-					<p>「はい、合致～」無料会員登録！</p>
+					<p>「はい、合致～」無料会員登録</p>
 					<form action="resister.php" method="POST">
 						<input type="text" placeholder="ユーザー名"><br>
 						<input type="text" placeholder="メールアドレス"><br>
