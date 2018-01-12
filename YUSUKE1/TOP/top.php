@@ -2,12 +2,16 @@
 session_start();
 require('../dbconnect.php');
 
-$_SESSON['login_user']['id']=1;
-$login_user = $_SESSON['login_user']['id'];
+$_SESSON['login_user']['id']=rand(3,7);
+$_SESSON['login_user']['username']="a";
+$login_id = $_SESSON['login_user']['id'];
 $friend = 2;
 
+require('himajin.php');
 require('request.php');
 require('receive.php');
+
+
 
 ?>
 
@@ -59,48 +63,23 @@ require('receive.php');
 				<li><a>ヘルプ</a></li>
 			</ul>
 		</div>
-	</div> <!-- side -->
+	</div> <!-- sidevar -->
 
 	<div id="himajin">
-		<h1>暇人一覧</h1>
-		<form method="POST" action="">
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
+		<?php foreach($login_users as $login_users): ?>
+			<div style="display: inline-block; padding:10% 50px 0 50px; vertical-align:top">
+					<img src="../profile_image/<?php echo $login_users['profileImage'] ?>">
+				<form method="POST" action="">
+					<p><?php echo $login_users['username']; ?></p>
+					<input type="hidden" name="requested_user" value="<?php echo $login_users['username']; ?>">
+					<button style="display: block;" type="submit" name="request" value="request">合致申請</button>
+				</form>
 			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-		</form>
+		<?php endforeach ?>
 	</div><!-- himajin -->
 
-	<div id="request">
-		<h1 style="padding-top: 50px;">リクエストユーザー</h1>
+	<div id="requested">
+		<h1>申請が来ています</h1>
 		<?php foreach($requested as $requests): ?>
 			<form method="POST" action="">
 			<p><?php echo $requests['requesting_user']; ?></p>
@@ -108,28 +87,17 @@ require('receive.php');
 				<button type="submit" name="accept" value="accept">承認</button>
 			</form>
 		<?php endforeach ?>
-	</div>
+	</div><!-- requested -->
 
-	<div id="recommend">
-		<h1>おすすめユーザー</h1>
+
+	<div id="request_To">
+		<h1>このユーザーに申請しています</h1>
 		<form method="POST" action="">
 			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
-			</div>
-			<div>
-				<p>aaaaaaaaaa</p>
-				<button type="submit" name="request" value="request">合致申請</button>
+				<p><?php if (!empty($_POST['requested_user'])) { echo $_POST['requested_user'];} ?></p>
+				<button type="button" name="request" value="request">申請取消</button>
 			</div>
 		</form>
-	</div>
+	</div><!-- recommend -->
 </body>
 </html>

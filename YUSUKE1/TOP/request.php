@@ -1,11 +1,8 @@
 <?php
-$_SESSON['login_user']['id']=1;
-$login_user = $_SESSON['login_user']['id'];
-$friend = 2;
 	if (!empty($_POST['request'])) {
 		$sql ="SELECT `requesting_user`
 			   FROM `gatch`
-			   WHERE `requesting_user`= $login_user
+			   WHERE `requesting_user`= $login_id
 			   AND `gatch`=0
 			  ";
 		$data = array();
@@ -18,7 +15,7 @@ $friend = 2;
 				    	`receive_user` = ?,
 				    	`request_created` = NOW()
 			       ";
-			$data = array($login_user,$friend);
+			$data = array($login_id,$friend);
 			$stmt = $dbh->prepare($sql);
 			$stmt->execute($data);
 
