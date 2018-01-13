@@ -8,4 +8,6 @@ require('../dbconnect.php');
 	$data = array($_POST['condition'], $_POST['login_id']);
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
+
+	echo "aaaa";
 ?>

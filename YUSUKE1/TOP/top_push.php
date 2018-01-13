@@ -2,10 +2,24 @@
 session_start();
 require('../dbconnect.php');
 
+$sql = "SELECT *
+        FROM  `users`
+        WHERE `id`= 1
+        ";
+    $data = array();
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+    $user_info = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
 $_SESSON['login_user']['id']=1;
-$_SESSON['login_user']['condition']=1;
+$_SESSON['login_user']['condition']= $user_info['conditioned'];
 $login_id = $_SESSON['login_user']['id'];
-$friend = 2;
+$login_condition = $_SESSON['login_user']['condition'];
+
+// echo "<br><br><br><br><br><br><br><br><br><br>";
+// var_dump($user_info);
 
 require('himajin.php');
 require('condition_gatch.php');
@@ -17,11 +31,12 @@ require('condition_gatch.php');
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
     <meta charset="utf-8">
     <title>練習</title>
     <!-- ========stylesheet======== -->
     <link rel="stylesheet" type="text/css" href="top.css">
-    <!-- ========fontawesome======== -->
+    <!-- ========fontawesome========-->
     <link rel="stylesheet" type="text/css" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- ========jQuery======== -->
     <script src="../jQuery/jquery-3.1.1.js"</script>
@@ -31,6 +46,7 @@ require('condition_gatch.php');
     <!-- ========PHPで定義した変数をJSで使う======== -->
     <script type="text/javascript">
         var login_id = <?php echo json_encode($login_id); ?>;
+        var login_condition = <?php echo json_encode($login_condition); ?>;
     </script>
 </head>
 
@@ -51,7 +67,13 @@ require('condition_gatch.php');
     <div id="himajin">
         <?php foreach($login_users as $login_users): ?>
             <div>
-                <img src="../profile_image/<?php echo $login_users['profileImage'] ?>">
+                <form method="POST" action="chat.php">
+                <input type="hidden" name="jibun" value="<?php echo $login_id; ?>">
+                <input type="hidden" name="aite" value="<?php echo $login_users['id']; ?>">
+                <button type="submit" class="tochat">
+                    <img src="../profile_image/<?php echo $login_users['profileImage'] ?>">
+                </button>
+                </form>
                 <p><?php echo $login_users['username']; ?></p>
                 <button>合致通知</button>
             </div>
@@ -62,6 +84,13 @@ require('condition_gatch.php');
         <h1>合致ユーザー</h1>
         <?php foreach($condition_gatch as $condition_gatch): ?>
             <div>
+                <form method="POST" action="chat.php">
+                <input type="hidden" name="jibun" value="<?php echo $login_id; ?>">
+                <input type="hidden" name="aite" value="<?php echo $condition_gatch['id']; ?>">
+                <button type="submit" class="tochat">
+                    <img src="../profile_image/<?php echo $condition_gatch['profileImage'] ?>">
+                </button>
+                </form>
                 <p><?php echo $condition_gatch['username']; ?></p>
                 <button class="gatch">合致通知</button>
             </div>
@@ -69,7 +98,7 @@ require('condition_gatch.php');
     </div><!-- gatch -->
 
     <div id="condition">
-        <h1 id="test">コンディション</h1>
+        <p>あなたのコンディションは<img id="test" src="../images/<?php echo $login_condition; ?>">です</p>
             <div>
                 <button id="karaoke" style="width: 100px;">カラオケ</button>
                 <button id="drive">
@@ -84,6 +113,7 @@ require('condition_gatch.php');
             </div>
     </div><!-- condition -->
 <script type="text/javascript" src="ajax.js"></script>
+
 </body>
 </html>
 

@@ -1,9 +1,3 @@
-// phpで定義した変数をjsで使いたい
-// 変数を使ってクリックしたコンディションごとにphpファイルに送る値を変えたい
-// おそらく eq() を使う
-// クリックしたのが#karaoke なら condition =1,#cafeならcondition =2 など
-
-
 $(function(){
    $('#karaoke').on('click',function(){
         $.ajax({
@@ -11,19 +5,31 @@ $(function(){
             url:"condition.php",
             data:{
                 "login_id": login_id,
-                "condition": 1,
+                "condition":1,
             }
         })
         .done(function(data){
-            $('#test').text('コンディションがかわりました');
+            $('#test').attr('src','../images/?');
             console.log(data);
+            $('body').load('http://localhost/20171030/haigachi/YUSUKE1/TOP/top_push.php');
 
         })
-        .fail(function(data){
-            $('#test').text("しっぱい");
+    });
+   $('#drive').on('click',function(){
+        $.ajax({
+            type:"POST",
+            url:"condition.php",
+            data:{
+                "login_id": login_id,
+                "condition": "i_drive.gif",
+            }
+        })
+        .done(function(data){
+            $('#test').attr('src','../images/i_drive.gif');
             console.log(data);
+            $('body').load('http://localhost/20171030/haigachi/YUSUKE1/TOP/top_push.php');
 
-        });
+        })
     });
 });
 
