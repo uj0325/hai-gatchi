@@ -101,7 +101,28 @@ header {
 #himajin::-webkit-scrollbar{
 	display: none;
 }
-#requested {
+#himajin div{
+	display: inline-block;
+    padding:0 20px;
+    vertical-align:top;
+}
+#himajin img{
+	width: 100px;
+	height: 100px;
+	display: block;
+	border-radius: 100%;
+	margin-top: 100%;
+}
+#himajin p{
+	display: block;
+	margin: 10px;
+	font-size: 20px;
+}
+#himajin button{
+	display: inline-table;
+}
+
+#gatch {
 	width: 50%;
 	height: 50%;
 	/*background-color: orange;*/
@@ -113,7 +134,7 @@ header {
 	border-top: 2px solid #44ff44;
 	border-right: 2px solid #44ff44;
 }
-#request_To {
+#condition {
 	width: 50%;
 	height: 50%;
 /*	background-color: skyblue;
@@ -124,3 +145,21 @@ header {
 	overflow-x: auto;
 	border-top: 2px solid #44ff44;
 }
+#condition button{
+	margin: 10px;
+	padding: 0;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+#condition button:active{
+	position: relative;
+		top: 7px;
+	outline: none;
+}
+#condition img{
+	width: 50px;
+	height: 50px;
+	display: block;
+}
+

@@ -1,6 +1,6 @@
 <?php
 	// 自分以外のログインしている人を全員表示する
-	// usersテーブルからデータを取得してfetchallからのforeachで表示
+	// usersテーブルからデータを取得してfetchallしてforeachで表示
 
 	$sql = "SELECT `id`,`username`,`profileImage`
 			FROM   `users`

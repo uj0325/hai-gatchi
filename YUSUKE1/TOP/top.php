@@ -3,15 +3,15 @@ session_start();
 require('../dbconnect.php');
 
 $_SESSON['login_user']['id']=rand(3,7);
-$_SESSON['login_user']['username']="a";
+$_SESSON['login_user']['username']="abcde";
+$_SESSON['login_user']['condition']=1;
 $login_id = $_SESSON['login_user']['id'];
 $friend = 2;
 
 require('himajin.php');
-require('request.php');
-require('receive.php');
-
-
+require('condition_gatch.php');
+// require('request.php');
+// require('receive.php');
 
 ?>
 
@@ -71,33 +71,39 @@ require('receive.php');
 					<img src="../profile_image/<?php echo $login_users['profileImage'] ?>">
 				<form method="POST" action="">
 					<p><?php echo $login_users['username']; ?></p>
-					<input type="hidden" name="requested_user" value="<?php echo $login_users['username']; ?>">
-					<button style="display: block;" type="submit" name="request" value="request">合致申請</button>
+						<input type="hidden" name="requested_user" value="<?php echo $login_users['username']; ?>">
+					<button style="display: block;" type="submit" name="request" value="request">合致通知</button>
 				</form>
 			</div>
 		<?php endforeach ?>
 	</div><!-- himajin -->
 
-	<div id="requested">
+<!-- 	<div id="requested">
 		<h1>申請が来ています</h1>
-		<?php foreach($requested as $requests): ?>
+		<?php //foreach($requested as $requests): ?>
 			<form method="POST" action="">
-			<p><?php echo $requests['requesting_user']; ?></p>
-				<input type="hidden" name="requesting_user" value="<?php echo $requests['requesting_user']; ?>">
+			<p><?php// echo $requests['requesting_user']; ?></p>
+				<input type="hidden" name="requesting_user" value="<?php// echo $requests['requesting_user']; ?>">
 				<button type="submit" name="accept" value="accept">承認</button>
 			</form>
-		<?php endforeach ?>
+		<?php //endforeach ?>
 	</div><!-- requested -->
 
 
-	<div id="request_To">
-		<h1>このユーザーに申請しています</h1>
-		<form method="POST" action="">
+	<div id="gatch">
+		<h1>合致ユーザー</h1>
+		<?php foreach($condition_gatch as $condition_gatch): ?>
 			<div>
-				<p><?php if (!empty($_POST['requested_user'])) { echo $_POST['requested_user'];} ?></p>
-				<button type="button" name="request" value="request">申請取消</button>
+				<p><?php echo $condition_gatch['username']; ?></p>
+				<button type="submit" name="request" value="request">合致通知</button>
 			</div>
-		</form>
-	</div><!-- recommend -->
+		<?php endforeach ?>
+	</div><!-- gatch -->
+
+	<div id="condition">
+		<h1>コンディション</h1>
+			<div>
+			</div>
+	</div><!-- condition -->
 </body>
 </html>
