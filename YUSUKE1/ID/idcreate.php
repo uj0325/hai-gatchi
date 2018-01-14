@@ -95,7 +95,7 @@ $loginuser = rand(101,200);
 		<br>
 		<br>
 		<br>
-		<a href="../TOP/top.php">トップへ</a>
+		<a href="../TOP/top_push.php">トップへ</a>
 	</div>
 
 

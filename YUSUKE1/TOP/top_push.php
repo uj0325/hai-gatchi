@@ -43,6 +43,8 @@ require('condition_gatch.php');
     <script src="../jQuery/jquery-migrate-1.4.1.js"></script>
     <!-- ========AJAX======== -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- ========push.js======== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js">Push.Permission.request();</script>
     <!-- ========PHPで定義した変数をJSで使う======== -->
     <script type="text/javascript">
         var login_id = <?php echo json_encode($login_id); ?>;
@@ -75,7 +77,7 @@ require('condition_gatch.php');
                 </button>
                 </form>
                 <p><?php echo $login_users['username']; ?></p>
-                <button>合致通知</button>
+                <button onclick="button()">合致通知</button>
             </div>
         <?php endforeach ?>
     </div><!-- himajin -->
@@ -113,7 +115,7 @@ require('condition_gatch.php');
             </div>
     </div><!-- condition -->
 <script type="text/javascript" src="ajax.js"></script>
-
+</script>
 </body>
 </html>
 

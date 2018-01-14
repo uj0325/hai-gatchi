@@ -1,8 +1,4 @@
-p{
-	font-size: 30px;
-	display: inline-block;
-}
-button{
+p,button{
 	display: inline-block;
 }
 
@@ -115,7 +111,7 @@ header {
 	margin-top: 100%;
 }
 .tochat img:hover{
-	border: 3px solid yellow;
+	border: 5px solid yellow;
 }
 .tochat img:active{
 	position: relative;
@@ -127,7 +123,7 @@ header {
 	font-size: 20px;
 }
 #himajin .tochat{
-	display: inline-table;
+	display: inline-block;
 	margin: 10px;
 	padding: 0;
 	border: none;
