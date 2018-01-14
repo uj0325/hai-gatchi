@@ -14,8 +14,8 @@ $stmt=$dbh->prepare($sql);
 $stmt->execute($data);
 $record=$stmt->fetch(PDO::FETCH_ASSOC);
 
-$user=;/*$record['requesting_user'];*/
-$other=;/*$record['receive_user'];*/
+$user=8;/*$record['requesting_user'];*/
+$other=4;/*$record['receive_user'];*/
 /*var_dump($record);*/
 
 
@@ -202,15 +202,38 @@ if(!empty($_POST)){
     float: left;
     margin-right: -120px;
 }
+
+.chat-face-other {
+    float: left;
+    margin-right: -120px;
+}
+
+
+
 .chat-face img{
     border-radius: 30px;
     border: 1px solid #ccc;
     box-shadow: 0 0 4px #ddd;
 }
+
+.chat-face-other img{
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ddd;
+}
+
+
 .chat-area {
     width: 100%;
     float: right;
 }
+
+.chat-area-other {
+    width: 100%;
+    float: right;
+}
+
+
 .chat-hukidashi {
     display: inline-block; /*コメントの文字数に合わせて可変*/
     padding: 15px 20px;
@@ -221,6 +244,20 @@ if(!empty($_POST)){
     position: relative; /*追記*/
     background-color: #D9F0FF; /*追記*/
 }
+
+.chat-hukidashi-other {
+    display: inline-block; /*コメントの文字数に合わせて可変*/
+    padding: 15px 20px;
+    margin-left: 120px;
+    margin-top: 8px;
+    /* border: 1px solid gray; ←削除 */
+    border-radius: 10px;
+    position: relative; /*追記*/
+    background-color: #D9F0FF; /*追記*/
+}
+
+
+
 /* ↓追記↓ */
 .chat-hukidashi:after {
     content: "";
@@ -234,6 +271,22 @@ if(!empty($_POST)){
     border-width: 10px 10px 10px 0;
     border-color: transparent #D9F0FF transparent transparent;
 }
+
+.chat-hukidashi-other:after {
+    content: "";
+    position: absolute;
+    top: 50%; left: -10px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #D9F0FF transparent transparent;
+}
+
+
+
 .someone {
     background-color: #BCF5A9;
 }
