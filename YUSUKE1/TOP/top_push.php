@@ -26,6 +26,15 @@ require('condition_gatch.php');
 // require('request.php');
 // require('receive.php');
 
+if (empty($_POST['tochatpage'])) {
+    $sql='INSERT INTO `gatch`
+             SET  `requesting_user`=?,
+                  `receive_user` =?
+    ';
+    $data=array($_POST['jibun'],$_POST['aite']);
+    $stmt=$dbh->prepare($sql);
+    $stmt->execute($data);
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +78,7 @@ require('condition_gatch.php');
     <div id="himajin">
         <?php foreach($login_users as $login_users): ?>
             <div>
-                <form method="POST" action="chat.php">
+                <form method="POST" action="" name="tochatpage">
                 <input type="hidden" name="jibun" value="<?php echo $login_id; ?>">
                 <input type="hidden" name="aite" value="<?php echo $login_users['id']; ?>">
                 <button type="submit" class="tochat">
