@@ -14,11 +14,8 @@ $stmt=$dbh->prepare($sql);
 $stmt->execute($data);
 $record=$stmt->fetch(PDO::FETCH_ASSOC);
 
-$user=;/*$record['requesting_user'];*/
-$other=;/*$record['receive_user'];*/
-/*var_dump($record);*/
-
-
+$user=8;/*$record['requesting_user'];*/
+$other=4;/*$record['receive_user'];*/
 
 // 何かしらボタンが押されたら、ここの中のコードが動く
 if(!empty($_POST)){
@@ -40,13 +37,14 @@ if(!empty($_POST)){
                                       `chat` = ?,
                                       `created`=NOW()
        ';
-      $data = array($user,$other,$chat); // ?マークある場合は順番に配列をセットする
-      $stmt = $dbh->prepare($sql); // SQL文を準備する
-      $stmt->execute($data); // ?マークを上書きして実行！
+      $data = array($user,$other,$chat); 
+      $stmt = $dbh->prepare($sql); 
+      $stmt->execute($data); 
 
       }
 
 }
+
 /* チャット画面にchatを表示させるためのsql*/
       $sql = 'SELECT `chat`,`username`,`user_id`,`other_id`
                        `profile_image` 
@@ -61,9 +59,6 @@ if(!empty($_POST)){
        $stmt = $dbh->prepare($sql); 
        $stmt->execute($data); 
        $tweets = $stmt->fetchAll();
-/*var_dump($tweets);
-
-
 
 /*自分のプロフィールを表示したい*/
        $sql='SELECT `id`,`username`,`profile_image`, `created`
@@ -86,61 +81,65 @@ if(!empty($_POST)){
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>チャットページ</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>チャットページ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+  <meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+  <meta name="author" content="FreeHTML5.co" />
 
  
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    <!-- Facebook and Twitter integration -->
+  <meta property="og:title" content=""/>
+  <meta property="og:image" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:site_name" content=""/>
+  <meta property="og:description" content=""/>
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:url" content="" />
+  <meta name="twitter:card" content="" />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="favicon.ico">
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="annabox/css_anna/animate_anna.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css_anna/icomoon_anna.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css_anna/bootstrap_anna.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css_anna/owl.carousel.min_anna.css">
-	<link rel="stylesheet" href="css_anna/owl.theme.default.min_anna.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css_anna/style_anna.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="annabox/css_anna/animate_anna.css">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="css_anna/icomoon_anna.css">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="css_anna/bootstrap_anna.css">
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="css_anna/owl.carousel.min_anna.css">
+  <link rel="stylesheet" href="css_anna/owl.theme.default.min_anna.css">
+  <!-- Theme style  -->
+  <link rel="stylesheet" href="css_anna/style_anna.css">
+ 　
+ 　<!-- チャット画面 -->
+  <link rel="stylesheet" href="css_anna/chatmain.css">
 
-	<!-- Modernizr JS -->
-	<script src="js_anna/modernizr-2.6.2.min_anna.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+  <!-- Modernizr JS -->
+  <script src="js_anna/modernizr-2.6.2.min_anna.js"></script>
+  <!-- FOR IE9 below -->
+  <!--[if lt IE 9]>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+
 </head>
 <body>
-	<h1 style="text-align: center;">はい合致チャット画面</h1>
+  <h1 style="text-align: center;">はい合致チャット画面</h1>
      <p style="text-align: center; font-size: 20px">
-     	<?php echo $other_profile['username'];?>さんと合致しました！！</p>
+      <?php echo $other_profile['username'];?>さんと合致しました！！</p>
 
 
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-4">
-			　
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+      　
               <h3 style="text-align: center;">マイプロフィール</h3>
                ようこそ：<?php 
                        echo $user_profile['username'] ;
@@ -176,75 +175,18 @@ if(!empty($_POST)){
               ログアウト
              </a>
              </div>
-　　　　　　<!-- ここまで自分のプロフィール　 -->　　
+　<!-- ここまで自分のプロフィール　 -->　　
 
 
   <!-- 1件分のツイート -->
          
 
 　　
-			 <div class="col-xs-4" >
+       <div class="col-xs-4" >
               
         <h3 style="text-align: center;">チャット画面</h3>
 
-<style type="css_anna/chatmain.css">
-  
-/* チャットレイアウト */
 
-/* チャットレイアウト */
-.chat-box {
-    width: 100%;
-    height: auto;
-    overflow: hidden; /*floatの解除*/
-    margin-bottom: 20px;
-}
-.chat-face {
-    float: left;
-    margin-right: -120px;
-}
-.chat-face img{
-    border-radius: 30px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 4px #ddd;
-}
-.chat-area {
-    width: 100%;
-    float: right;
-}
-.chat-hukidashi {
-    display: inline-block; /*コメントの文字数に合わせて可変*/
-    padding: 15px 20px;
-    margin-left: 120px;
-    margin-top: 8px;
-    /* border: 1px solid gray; ←削除 */
-    border-radius: 10px;
-    position: relative; /*追記*/
-    background-color: #D9F0FF; /*追記*/
-}
-/* ↓追記↓ */
-.chat-hukidashi:after {
-    content: "";
-    position: absolute;
-    top: 50%; left: -10px;
-    margin-top: -10px;
-    display: block;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent #D9F0FF transparent transparent;
-}
-.someone {
-    background-color: #BCF5A9;
-}
-.someone:after {
-    border-color: transparent #BCF5A9 transparent transparent;
-}
-
-
-/* ↑追記↑ */
-
-</style>
 <?php foreach($tweets as $t){ ?>
 
     <?php if($t['user_id']==$user){ // 自分だったら  ?>
@@ -253,6 +195,7 @@ if(!empty($_POST)){
           <div class="chat-face">
             <img src="profile_image/<?php echo  $user_profile['profile_image'];  ?>" alt="自分のチャット画像です。" width="90" height="90">
           </div>
+
           <div class="chat-area">
             <div class="chat-hukidashi">
               <?php echo $t['chat']; ?>
@@ -263,12 +206,12 @@ if(!empty($_POST)){
     <?php }else{ //相手だったら ?>
         <!-- 相手のつぶやき -->
         <div class="chat-box">
-          <div class="chat-face">
+          <div class="chat-face-other">
             <img src="profile_image/<?php echo $other_profile['profile_image'];  ?>" 
             alt="誰かのチャット画像です。" width="90" height="90">
           </div>
-          <div class="chat-area">
-            <div class="chat-hukidashi someone">
+          <div class="chat-area-other">
+            <div class="chat-hukidashi-other someone">
               <?php echo $t['chat']; ?>
             </div>
           </div>
@@ -279,8 +222,8 @@ if(!empty($_POST)){
         </div>
                 <!--  ここまでチャット画面 -->
 
-			     <div class="col-xs-4" >
-			     <h3 style="text-align: center;" >合致メイト</h3>	
+           <div class="col-xs-4" >
+           <h3 style="text-align: center;" >合致メイト</h3>  
             ようこそ：<?php echo $other_profile['username']; ?>さん<br>
 
                  <img src="profile_image/<?php echo $other_profile['profile_image'];?>" width="50px">
@@ -293,11 +236,11 @@ if(!empty($_POST)){
                  </span>
 
                  
-			     </div>
-			<!-- ここまで相手のプロフィール　 -->
-			</div>
-		</div>
-	</div>
+           </div>
+      <!-- ここまで相手のプロフィール　 -->
+      </div>
+    </div>
+  </div>
 
 
 
