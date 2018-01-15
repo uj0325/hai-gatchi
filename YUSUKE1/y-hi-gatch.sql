@@ -1,0 +1,246 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: 2018 年 1 朁E15 日 04:40
+-- サーバのバージョン： 10.1.25-MariaDB
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `y-hi-gatch`
+--
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `friend-add`
+--
+
+CREATE TABLE `friend-add` (
+  `relation_number` int(11) NOT NULL,
+  `creater_id` int(11) NOT NULL,
+  `random` varchar(255) NOT NULL,
+  `inputer_id` int(11) DEFAULT NULL,
+  `random_created` datetime NOT NULL,
+  `relation_created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `friend-add`
+--
+
+INSERT INTO `friend-add` (`relation_number`, `creater_id`, `random`, `inputer_id`, `random_created`, `relation_created`) VALUES
+(219, 114, 'GYMHlZ20SVo84jClp38V', 81, '2018-01-11 03:13:22', '2018-01-11 03:53:25'),
+(220, 143, 'GYMHlZ20SVo84jClp38V', 81, '2018-01-11 03:13:41', '2018-01-11 03:53:25'),
+(221, 177, 'GYMHlZ20SVo84jClp38V', 81, '2018-01-11 03:13:51', '2018-01-11 03:53:25'),
+(222, 170, 'GYMHlZ20SVo84jClp38V', 81, '2018-01-11 03:14:15', '2018-01-11 03:53:25'),
+(223, 156, 'GYMHlZ20SVo84jClp38V', 81, '2018-01-11 03:14:24', '2018-01-11 03:53:25'),
+(224, 152, 'GYMHlZ20SVo84jClp38V', 81, '2018-01-11 03:17:56', '2018-01-11 03:53:25'),
+(225, 123, 'GYMHlZ20SVo84jClp38V', 81, '2018-01-11 03:18:21', '2018-01-11 03:53:25'),
+(247, 137, 'J0AlXvlor8Lfy0PN5Mta', NULL, '2018-01-14 11:34:45', '0000-00-00 00:00:00'),
+(248, 146, 'YILkPZHEIBSa36UY1nTM', NULL, '2018-01-14 11:34:49', '0000-00-00 00:00:00'),
+(249, 105, 'FzhRu8o6lUOKGBgzOmOQ', NULL, '2018-01-14 11:34:50', '0000-00-00 00:00:00'),
+(250, 122, 'OkTtbRUiUjI1gJGIFOCV', NULL, '2018-01-14 11:34:50', '0000-00-00 00:00:00'),
+(251, 141, 'iU7OUx6fRvwhmHa4DKVt', NULL, '2018-01-14 11:34:51', '0000-00-00 00:00:00'),
+(252, 124, 'wfknRYkrh7Sv1qzBHhvM', NULL, '2018-01-14 11:34:51', '0000-00-00 00:00:00'),
+(253, 104, '8NgS8vrYAf6xBC91gcDY', NULL, '2018-01-14 11:34:51', '0000-00-00 00:00:00'),
+(254, 125, 'V0wRxkz9Z94CRS0YAM9h', NULL, '2018-01-14 11:34:51', '0000-00-00 00:00:00'),
+(255, 125, '6Ma1NxgrQnyuxDvIB4UZ', NULL, '2018-01-14 11:34:52', '0000-00-00 00:00:00'),
+(256, 183, 'g9s7vrll77Ly7rEUGZTW', NULL, '2018-01-14 11:34:52', '0000-00-00 00:00:00'),
+(257, 183, 'DhmsH0UWhxNhygeE2k1T', NULL, '2018-01-14 11:34:52', '0000-00-00 00:00:00'),
+(258, 115, 'FjG0nTxKTUOLsUuV5gMm', NULL, '2018-01-14 11:34:52', '0000-00-00 00:00:00'),
+(259, 176, 'n4fr3u66ACZWLm1kK1xq', NULL, '2018-01-14 11:34:52', '0000-00-00 00:00:00'),
+(260, 172, 'lKP3JbYkYkr5pEQKx1pB', NULL, '2018-01-14 11:34:53', '0000-00-00 00:00:00'),
+(261, 101, 'bBqgv44TTa3UCKV6ZOg8', NULL, '2018-01-14 11:34:53', '0000-00-00 00:00:00'),
+(262, 114, 'NGxfLUNpv4lWCDwhlgHq', NULL, '2018-01-14 11:34:53', '0000-00-00 00:00:00'),
+(263, 126, 'dbwcqGQbU6IGJSzfWBVP', NULL, '2018-01-14 11:34:53', '0000-00-00 00:00:00'),
+(264, 186, 'bIbTaLq9T6C65YI2n9CA', NULL, '2018-01-14 11:34:54', '0000-00-00 00:00:00'),
+(265, 167, 'sWEKBLQL4GTpyNbcsIW2', NULL, '2018-01-14 11:34:54', '0000-00-00 00:00:00'),
+(266, 192, '4Sx2K7hkAj8K91aGOCuU', NULL, '2018-01-14 11:34:54', '0000-00-00 00:00:00'),
+(267, 160, 'zQVXb0G7kyFJfCPk4zEV', NULL, '2018-01-14 11:34:54', '0000-00-00 00:00:00'),
+(268, 172, 'DfAhDCprpn6NOv3TmXJr', NULL, '2018-01-14 11:34:54', '0000-00-00 00:00:00'),
+(269, 140, '8wloeXteZDUfsYFD1dO7', NULL, '2018-01-14 11:34:55', '0000-00-00 00:00:00'),
+(270, 173, '5dkCxDugsqzswjnlibgn', NULL, '2018-01-14 11:34:55', '0000-00-00 00:00:00'),
+(271, 113, 'fVxJfbipnn1RmTNEqRip', NULL, '2018-01-14 11:34:55', '0000-00-00 00:00:00'),
+(272, 128, '3WJZ9lFB5uljivRxLHN4', NULL, '2018-01-14 11:34:55', '0000-00-00 00:00:00'),
+(273, 131, 'xAnZPtLKb9RU13ItcAds', NULL, '2018-01-14 11:34:55', '0000-00-00 00:00:00'),
+(274, 128, 'bfIlx8TjJEHlGg2KuibN', NULL, '2018-01-14 11:34:56', '0000-00-00 00:00:00'),
+(275, 168, '2JPAs0MSx2jpTFTqAy3c', NULL, '2018-01-14 11:34:56', '0000-00-00 00:00:00'),
+(276, 200, '4RkRs6JxF1vWUffLUy89', NULL, '2018-01-14 11:34:56', '0000-00-00 00:00:00'),
+(277, 198, 'SPAZ366rFIAFzb56l65G', NULL, '2018-01-14 11:34:56', '0000-00-00 00:00:00'),
+(278, 179, 'Ns3nXhMTAET3NjHVjt6J', NULL, '2018-01-14 11:34:57', '0000-00-00 00:00:00'),
+(279, 161, 'wnQpbhJF5ewC70nmuaqa', NULL, '2018-01-14 11:34:57', '0000-00-00 00:00:00'),
+(280, 185, 'lXiAMqkZjGnbjjRzfimx', NULL, '2018-01-14 11:34:57', '0000-00-00 00:00:00'),
+(281, 150, 'DOEJgO0C5N1QsQTp386k', NULL, '2018-01-14 11:34:57', '0000-00-00 00:00:00'),
+(282, 197, 'b81uPG10fiZMyD0ROyBC', NULL, '2018-01-14 11:34:57', '0000-00-00 00:00:00'),
+(283, 176, 'iS6Wfe9tW7lmXhxlOkAx', NULL, '2018-01-14 11:34:57', '0000-00-00 00:00:00'),
+(284, 130, '5Ov444loYB5IrDyjr62p', NULL, '2018-01-14 11:34:58', '0000-00-00 00:00:00'),
+(285, 148, 'LLoktVPqDbpyHFnVZVXI', NULL, '2018-01-14 11:34:58', '0000-00-00 00:00:00'),
+(286, 105, '0keBofRwXz0mHyAgbIJ7', NULL, '2018-01-14 11:34:58', '0000-00-00 00:00:00'),
+(287, 147, 'DF3wPKxd7PnI4o22TOeQ', NULL, '2018-01-14 11:34:58', '0000-00-00 00:00:00'),
+(288, 132, 'V6a0yM549u1Sth0tWD7a', NULL, '2018-01-14 11:34:58', '0000-00-00 00:00:00'),
+(289, 200, 'PxHLlcAjEgxNIGu9vwhN', NULL, '2018-01-14 11:34:59', '0000-00-00 00:00:00'),
+(290, 175, 'oauESF5Lzwku0MFMaiQh', NULL, '2018-01-14 11:34:59', '0000-00-00 00:00:00'),
+(291, 158, 'ldMKghLADy7xaIcHU1MF', NULL, '2018-01-14 11:34:59', '0000-00-00 00:00:00'),
+(292, 137, 'zGQJXqv9V1KQGJkLcemb', NULL, '2018-01-14 11:34:59', '0000-00-00 00:00:00'),
+(293, 166, 'WUS4tUaLErFbVD8CBdTy', NULL, '2018-01-14 11:34:59', '0000-00-00 00:00:00'),
+(294, 128, 'iyG8YsvpksIoOCD33Z2z', NULL, '2018-01-14 11:35:00', '0000-00-00 00:00:00'),
+(295, 144, 'DacNpEPjenKUOdpkHbt6', NULL, '2018-01-14 11:35:00', '0000-00-00 00:00:00'),
+(296, 143, '0yfpj40R6cE3xcvPdVBi', NULL, '2018-01-14 11:35:00', '0000-00-00 00:00:00'),
+(297, 156, 'HchOOIYeop161JKcyKAX', NULL, '2018-01-14 11:35:00', '0000-00-00 00:00:00'),
+(298, 137, 'ymgUqrQU1ea78rWqEi4c', NULL, '2018-01-14 11:35:00', '0000-00-00 00:00:00'),
+(299, 189, 'vavLhtj1mLV5MnE8BaLF', NULL, '2018-01-14 11:35:01', '0000-00-00 00:00:00'),
+(300, 197, 'Xp1u19XksIQgQikwXO6G', NULL, '2018-01-14 11:35:01', '0000-00-00 00:00:00'),
+(301, 128, 'lapIqnO74p9sPHpuLEe3', NULL, '2018-01-14 11:35:01', '0000-00-00 00:00:00'),
+(302, 122, 'HKeNW4YuYc6uSB9KqT1f', NULL, '2018-01-14 11:35:01', '0000-00-00 00:00:00'),
+(303, 128, 'iasuc9QHQbHVqFvf4xJN', NULL, '2018-01-14 11:35:02', '0000-00-00 00:00:00'),
+(304, 195, '3uhOOhGQJ889fDvImMi5', NULL, '2018-01-14 11:35:02', '0000-00-00 00:00:00'),
+(305, 192, 'a6EDKCwiaZxMnKU0w3Fy', NULL, '2018-01-14 11:35:02', '0000-00-00 00:00:00'),
+(306, 157, 'qS7QJqmBWcpl5UZc6hrj', NULL, '2018-01-14 11:35:03', '0000-00-00 00:00:00'),
+(307, 145, 'w3YJSz3Dx0iwewV4GAsh', NULL, '2018-01-14 11:35:03', '0000-00-00 00:00:00'),
+(308, 184, 'UoRdHmNJNk5n7BgIL3lW', NULL, '2018-01-14 11:35:03', '0000-00-00 00:00:00'),
+(309, 107, 'oOi9SCYvRGIYkAeNp1oH', NULL, '2018-01-14 11:35:03', '0000-00-00 00:00:00'),
+(310, 141, 'G8rDtyLypVGLgTwpX4FM', NULL, '2018-01-14 16:54:10', '0000-00-00 00:00:00'),
+(311, 175, '1VP8YZyZOmVOjyxBIVp2', NULL, '2018-01-14 16:54:12', '0000-00-00 00:00:00'),
+(312, 139, 'D4YWR8q622TnLCXoDces', NULL, '2018-01-14 16:54:12', '0000-00-00 00:00:00'),
+(313, 101, 'ksCSZqV2Yd0YepRKLW0D', NULL, '2018-01-14 16:54:13', '0000-00-00 00:00:00'),
+(314, 102, 'KQZrJvE85EXtkXK4taw9', NULL, '2018-01-14 16:54:13', '0000-00-00 00:00:00'),
+(315, 189, 'ZF6SEaPaml1YwAPSvcXu', NULL, '2018-01-14 16:54:13', '0000-00-00 00:00:00'),
+(316, 112, 'Tt0kYQJXEcv0KRTuCL0R', NULL, '2018-01-14 16:54:13', '0000-00-00 00:00:00'),
+(317, 140, 'J9K8ozoOo7ZmmcqAf6Mt', NULL, '2018-01-14 16:54:14', '0000-00-00 00:00:00'),
+(318, 111, 'eKnerSDAoyzU8bU6tYXx', NULL, '2018-01-14 16:54:14', '0000-00-00 00:00:00'),
+(319, 180, 'YTXcoAnG3vCjVcjcsar0', NULL, '2018-01-14 16:54:14', '0000-00-00 00:00:00'),
+(320, 176, 'fYUkDGAB3zdPXAzeWmod', NULL, '2018-01-14 16:54:14', '0000-00-00 00:00:00'),
+(321, 131, 'ICZphkALRYeiTDkJJpgw', NULL, '2018-01-14 16:54:15', '0000-00-00 00:00:00'),
+(322, 192, 'x9zfjNGej57H2VPXGLTs', NULL, '2018-01-14 16:54:15', '0000-00-00 00:00:00'),
+(323, 184, 'o9HKemDq3Deekn3qyNO1', NULL, '2018-01-14 16:54:15', '0000-00-00 00:00:00'),
+(324, 128, 'H8FJMF9OyCnqwxnPc0FI', NULL, '2018-01-14 16:54:15', '0000-00-00 00:00:00'),
+(325, 182, 'IjEzJLRr0gcorq0hpPJq', NULL, '2018-01-14 16:54:15', '0000-00-00 00:00:00'),
+(326, 115, 'Uk7We3qf1QspBbYRDmiU', NULL, '2018-01-14 16:54:16', '0000-00-00 00:00:00'),
+(327, 185, 'hiSnZPH266SXWfwtZRDB', NULL, '2018-01-14 16:54:16', '0000-00-00 00:00:00'),
+(328, 116, 'GD0pURSzxr8e0v80Uc3m', NULL, '2018-01-14 16:54:16', '0000-00-00 00:00:00'),
+(329, 153, 'PyBaFUxPchI2UCwoK55Z', NULL, '2018-01-14 16:54:16', '0000-00-00 00:00:00'),
+(330, 103, 'wTfHrJwpRJjEmitQTDlu', NULL, '2018-01-14 16:54:17', '0000-00-00 00:00:00'),
+(331, 117, '3BdmvV543YD6BhVwVluC', NULL, '2018-01-14 16:54:17', '0000-00-00 00:00:00'),
+(332, 135, '7vx7ZTpMU4sfhfimZiRt', NULL, '2018-01-14 16:54:17', '0000-00-00 00:00:00'),
+(333, 154, 'Ddk6bPYysL2rUWOcPYNa', NULL, '2018-01-14 16:54:17', '0000-00-00 00:00:00'),
+(334, 127, 'XAaY2V0EBce4YCtaFUYi', NULL, '2018-01-14 16:54:17', '0000-00-00 00:00:00'),
+(335, 164, 'CzvSY2DeG31YXrKk7pbJ', NULL, '2018-01-14 16:54:17', '0000-00-00 00:00:00'),
+(336, 132, 'loqX3RSJVQjFUFlaqt81', NULL, '2018-01-14 16:54:18', '0000-00-00 00:00:00'),
+(337, 143, 'oxnVyob0rogGRWjaA3zq', NULL, '2018-01-14 16:54:18', '0000-00-00 00:00:00'),
+(338, 110, 'zANRRU1Rzf7TjuWVGxZz', NULL, '2018-01-14 16:54:18', '0000-00-00 00:00:00'),
+(339, 161, '17vYoUl1YYTdycWVGZsD', NULL, '2018-01-14 16:54:18', '0000-00-00 00:00:00'),
+(340, 106, 'i0tuvt5CW0vEMIylmEMz', NULL, '2018-01-14 16:54:18', '0000-00-00 00:00:00'),
+(341, 131, 'nddFSwvUBpZgQPngAHIp', NULL, '2018-01-14 16:54:19', '0000-00-00 00:00:00'),
+(342, 161, 'SSh0bmYDVUlEkIhWSRB4', NULL, '2018-01-14 20:11:11', '0000-00-00 00:00:00'),
+(343, 182, 'dZK34gGdVtN291arhQPB', NULL, '2018-01-14 20:11:12', '0000-00-00 00:00:00'),
+(344, 123, 'wmbwvBEZCadz8SvQYlga', NULL, '2018-01-14 20:11:13', '0000-00-00 00:00:00'),
+(345, 141, 'y0hj3UUgTFAUDqSWjNZb', NULL, '2018-01-14 20:11:13', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `gatch_push`
+--
+
+CREATE TABLE `gatch_push` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `other_id` int(11) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `email` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `profileImage` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `conditioned` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `login` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `profileImage`, `conditioned`, `created`, `updated`, `login`) VALUES
+(1, 'aaaa', 'aaaa@aaaa', 'aaaa', '01.jpg', '1', '2017-12-28 16:33:28', '2018-01-15 03:27:41', 1),
+(3, 'yusuke', 'yusuke@yusuke', 'yusukeyusuke', 'news_17967_7 (2).jpg', 'i_drive.gif', '2018-01-03 18:46:46', '2018-01-13 09:41:01', 1),
+(4, 'uz', 'uz@uz', 'uzuz', '01.jpg', 'i_drive.gif', '2018-01-03 22:42:15', '2018-01-13 09:41:05', 1),
+(5, 'aaaaa', '', '', '02.jpg', 'i_drive.gif', '0000-00-00 00:00:00', '2018-01-13 09:41:08', 1),
+(6, 'bbbbb', '', '', '03.jpg', '1', '0000-00-00 00:00:00', '2018-01-13 10:44:46', 1),
+(7, 'ccccc', '', '', '06.jpg', '2', '0000-00-00 00:00:00', '2018-01-13 05:50:13', 1),
+(8, 'ddddd', '', '', '	profile.jpg', '2', '0000-00-00 00:00:00', '2018-01-12 15:29:43', 1),
+(9, 'eeeee', '', '', '06.jpg', '1', '0000-00-00 00:00:00', '2018-01-13 10:44:49', 1),
+(10, 'fffff', '', '', '01.jpg', '3', '0000-00-00 00:00:00', '2018-01-12 15:19:22', 1),
+(11, 'ggggg', '', '', '03.jpg', '1', '0000-00-00 00:00:00', '2018-01-13 10:44:52', 1),
+(12, 'hhhhh', '', '', '02.jpg', '3', '0000-00-00 00:00:00', '2018-01-12 15:19:13', 1),
+(13, 'iiiii', '', '', '06.jpg', 'i_drive.gif', '0000-00-00 00:00:00', '2018-01-13 09:41:13', 1),
+(14, 'jjjj', '', '', '03.jpg', '2', '0000-00-00 00:00:00', '2018-01-12 15:18:54', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `friend-add`
+--
+ALTER TABLE `friend-add`
+  ADD PRIMARY KEY (`relation_number`);
+
+--
+-- Indexes for table `gatch_push`
+--
+ALTER TABLE `gatch_push`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `friend-add`
+--
+ALTER TABLE `friend-add`
+  MODIFY `relation_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
+--
+-- AUTO_INCREMENT for table `gatch_push`
+--
+ALTER TABLE `gatch_push`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

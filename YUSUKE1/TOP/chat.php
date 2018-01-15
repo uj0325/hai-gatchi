@@ -29,5 +29,6 @@ var_dump($_GET);
         console.log(this);
     }
 });
+</script>
 </body>
 </html>
