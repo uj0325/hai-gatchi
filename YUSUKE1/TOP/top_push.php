@@ -26,15 +26,15 @@ require('condition_gatch.php');
 // require('request.php');
 // require('receive.php');
 
-if (empty($_POST['tochatpage'])) {
-    $sql='INSERT INTO `gatch`
-             SET  `requesting_user`=?,
-                  `receive_user` =?
-    ';
-    $data=array($_POST['jibun'],$_POST['aite']);
-    $stmt=$dbh->prepare($sql);
-    $stmt->execute($data);
-}
+// if (empty($_POST['tochatpage'])) {
+//     $sql='INSERT INTO `gatch`
+//              SET  `requesting_user`=?,
+//                   `receive_user` =?
+//     ';
+//     $data=array($_POST['jibun'],$_POST['aite']);
+//     $stmt=$dbh->prepare($sql);
+//     $stmt->execute($data);
+// }
 ?>
 
 <!DOCTYPE html>
@@ -78,13 +78,12 @@ if (empty($_POST['tochatpage'])) {
     <div id="himajin">
         <?php foreach($login_users as $login_users): ?>
             <div>
-                <form method="POST" action="" name="tochatpage">
-                <input type="hidden" name="jibun" value="<?php echo $login_id; ?>">
-                <input type="hidden" name="aite" value="<?php echo $login_users['id']; ?>">
+            <a href="chat.php?id=<?php echo $login_users['id']; ?>"
+            style="text-decoration: none;">
                 <button type="submit" class="tochat">
                     <img src="../profile_image/<?php echo $login_users['profileImage'] ?>">
                 </button>
-                </form>
+            </a>
                 <p><?php echo $login_users['username']; ?></p>
                 <button onclick="button()">合致通知</button>
             </div>
@@ -95,13 +94,12 @@ if (empty($_POST['tochatpage'])) {
         <h1>合致ユーザー</h1>
         <?php foreach($condition_gatch as $condition_gatch): ?>
             <div>
-                <form method="POST" action="chat.php">
-                <input type="hidden" name="jibun" value="<?php echo $login_id; ?>">
-                <input type="hidden" name="aite" value="<?php echo $condition_gatch['id']; ?>">
+            <a href="chat.php?id=<?php echo $condition_gatch['id']?>"
+            style="text-decoration: none;">
                 <button type="submit" class="tochat">
                     <img src="../profile_image/<?php echo $condition_gatch['profileImage'] ?>">
                 </button>
-                </form>
+            </a>
                 <p><?php echo $condition_gatch['username']; ?></p>
                 <button class="gatch">合致通知</button>
             </div>

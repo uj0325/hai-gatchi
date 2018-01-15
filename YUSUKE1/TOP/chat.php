@@ -2,7 +2,12 @@
 // 合致通知ボタンが押されるとチャット画面に通知が来るようにする
 // ボタン押す→DBに１が入る→自動でデータ取得→取得したら通知発動
 // AJAXでPOST送信→DBにINSERT→成功したら○○に通知を送りました
-var_dump($_POST);
+
+if (empty($_GET['id'])) {
+    header('Location: top_push.php');
+    exit();
+}
+var_dump($_GET);
 
 ?>
 <!DOCTYPE html>
