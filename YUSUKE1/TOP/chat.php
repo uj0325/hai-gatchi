@@ -29,6 +29,8 @@ var_dump($_GET);
     $(document).ready(function(){
       // HTMLのコンテンツを全て読み込んだ後に実行する
 
+
+
         $('#push').click(function(){
             Push.create('こんにちは！', {
             body: '更新をお知らせします！',

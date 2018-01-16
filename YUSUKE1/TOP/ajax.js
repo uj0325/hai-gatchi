@@ -31,5 +31,36 @@ $(function(){
 
         })
     });
+   $('#push').on('click',function(){
+        $.ajax({
+            type:"POST",
+            url:"alert.php",
+            data:{
+                "pushed_user": condition_gatch['id'],
+            }
+        })
+        .done(function(data){
+           alert('通知を送信しました');
+
+        })
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 

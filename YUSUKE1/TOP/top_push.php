@@ -85,7 +85,7 @@ require('condition_gatch.php');
                 </button>
             </a>
                 <p><?php echo $login_users['username']; ?></p>
-                <button onclick="button()">合致通知</button>
+                <button id="push">合致通知</button>
             </div>
         <?php endforeach ?>
     </div><!-- himajin -->
@@ -101,7 +101,7 @@ require('condition_gatch.php');
                 </button>
             </a>
                 <p><?php echo $condition_gatch['username']; ?></p>
-                <button class="gatch">合致通知</button>
+                <button class="alert">合致通知</button>
             </div>
         <?php endforeach ?>
     </div><!-- gatch -->
@@ -122,6 +122,8 @@ require('condition_gatch.php');
             </div>
     </div><!-- condition -->
 <script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+    var condition_gatch['id'] = $condition_gatch['id'];
 </script>
 </body>
 </html>
