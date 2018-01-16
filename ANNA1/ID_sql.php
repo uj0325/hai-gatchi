@@ -37,6 +37,8 @@
 		exit();
 	} // if (!empty($_POST))
 
+
+
 /*ID出力画面
 */
 require('dbconect_gatch.php');
@@ -72,7 +74,6 @@ $loginuser = rand(101,200);
 	$data = array($loginuser);
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
-
 	$created_id = $stmt->fetchall();
 
 ?>

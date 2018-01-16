@@ -59,6 +59,22 @@ require('ID_sql.php');
   <script src="js/respond.min.js"></script>
   <![endif]-->
 
+<!-- idcreateから
+ -->
+  <!-- ========jQuery======== -->
+  <script src="../jQuery/jquery-3.1.1.js"</script>
+    <script src="../jQuery/jquery-migrate-1.4.1.js"></script>
+    <!-- ========AJAX======== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+        var clipboadCopy = function(){
+            var id = document.getElementById("onetime");
+            id.select();
+            document.execCommand("copy");
+        }
+        </script>
+
+
  	<title>作成と入力</title>
 
 </head>
@@ -74,7 +90,7 @@ require('ID_sql.php');
 					     <form method="POST" action="">
 						   <input  type="text" name="onetimeId" value="<?php echo $r_str; ?>" id="onetime" >
 						   </input>
-						   <input type="submit" name="idCreate" class="btn btn-primary" value="コピーする" onclick=" ()">
+						   <input type="submit" name="idCreate" class="btn btn-primary" value="コピーする" onclick="clipboadCopy()">
 					     </form>
 				　　   </div>
 
@@ -87,8 +103,7 @@ require('ID_sql.php');
 					 <p style="font-size:15px;">
 			    <?php echo $key['random']; ?>
 					 </p>
-
-				 <?php endforeach; ?>
+				<?php endforeach; ?>
 
         					<br>
         					<br>
