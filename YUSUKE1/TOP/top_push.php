@@ -13,13 +13,10 @@ $sql = "SELECT *
 
 
 
-$_SESSON['login_user']['id']=1;
-$_SESSON['login_user']['condition']= $user_info['conditioned'];
-$login_id = $_SESSON['login_user']['id'];
-$login_condition = $_SESSON['login_user']['condition'];
-
-// echo "<br><br><br><br><br><br><br><br><br><br>";
-// var_dump($user_info);
+$_SESSION['login_user']['id']=$user_info['id'];
+$_SESSION['login_user']['conditioned']= $user_info['conditioned'];
+$login_id = $_SESSION['login_user']['id'];
+$login_condition = $_SESSION['login_user']['conditioned'];
 
 require('himajin.php');
 require('condition_gatch.php');
@@ -78,14 +75,13 @@ require('condition_gatch.php');
     <div id="himajin">
         <?php foreach($login_users as $login_users): ?>
             <div>
-            <a href="chat.php?id=<?php echo $login_users['id']; ?>"
-            style="text-decoration: none;">
-                <button type="submit" class="tochat">
-                    <img src="../profile_image/<?php echo $login_users['profileImage'] ?>">
-                </button>
-            </a>
+                <a href="../../ANNA1/chatpage.php?id=<?php echo $login_users['id']; ?>" style="text-decoration: none;">
+                    <button type="submit" class="tochat">
+                        <img src="../profile_image/<?php echo $login_users['profileImage'] ?>">
+                    </button>
+                </a>
                 <p><?php echo $login_users['username']; ?></p>
-                <button id="push">合致通知</button>
+                <button class="push">合致通知</button>
             </div>
         <?php endforeach ?>
     </div><!-- himajin -->
@@ -94,14 +90,14 @@ require('condition_gatch.php');
         <h1>合致ユーザー</h1>
         <?php foreach($condition_gatch as $condition_gatch): ?>
             <div>
-            <a href="chat.php?id=<?php echo $condition_gatch['id']?>"
+            <a href="../../ANNA1/chatpage.php?id=<?php echo $condition_gatch['id']?>"
             style="text-decoration: none;">
                 <button type="submit" class="tochat">
                     <img src="../profile_image/<?php echo $condition_gatch['profileImage'] ?>">
                 </button>
             </a>
                 <p><?php echo $condition_gatch['username']; ?></p>
-                <button class="alert">合致通知</button>
+                <button class="push">合致通知</button>
             </div>
         <?php endforeach ?>
     </div><!-- gatch -->
@@ -122,9 +118,7 @@ require('condition_gatch.php');
             </div>
     </div><!-- condition -->
 <script type="text/javascript" src="ajax.js"></script>
-<script type="text/javascript">
-    var condition_gatch['id'] = $condition_gatch['id'];
-</script>
+
 </body>
 </html>
 
