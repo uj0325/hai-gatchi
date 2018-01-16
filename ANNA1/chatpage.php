@@ -206,12 +206,12 @@ if(!empty($_POST)){
     <?php }else{ //相手だったら ?>
         <!-- 相手のつぶやき -->
         <div class="chat-box">
-          <div class="chat-face-other">
+          <div class="chat-face">
             <img src="profile_image/<?php echo $other_profile['profile_image'];  ?>" 
             alt="誰かのチャット画像です。" width="90" height="90">
           </div>
-          <div class="chat-area-other">
-            <div class="chat-hukidashi-other someone">
+          <div class="chat-area">
+            <div class="chat-hukidashi someone">
               <?php echo $t['chat']; ?>
             </div>
           </div>

@@ -4,19 +4,29 @@
     overflow: hidden; /*floatの解除*/
     margin-bottom: 20px;
 }
+
 .chat-face {
     float: left;
     margin-right: -120px;
 }
+
+
+
 .chat-face img{
     border-radius: 30px;
     border: 1px solid #ccc;
     box-shadow: 0 0 4px #ddd;
 }
+
+
 .chat-area {
     width: 100%;
     float: right;
 }
+
+
+
+
 .chat-hukidashi {
     display: inline-block; /*コメントの文字数に合わせて可変*/
     padding: 15px 20px;
@@ -27,7 +37,9 @@
     position: relative; /*追記*/
     background-color: #D9F0FF; /*追記*/
 }
-/* ↓追記↓ */
+
+
+
 .chat-hukidashi:after {
     content: "";
     position: absolute;
@@ -40,6 +52,10 @@
     border-width: 10px 10px 10px 0;
     border-color: transparent #D9F0FF transparent transparent;
 }
+
+
+
+
 .someone {
     background-color: #BCF5A9;
 }
