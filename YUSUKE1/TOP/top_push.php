@@ -81,7 +81,7 @@ require('condition_gatch.php');
                     </button>
                 </a>
                 <p><?php echo $login_users['username']; ?></p>
-                <button id="push">合致通知</button>
+                <button class="push">合致通知</button>
             </div>
         <?php endforeach ?>
     </div><!-- himajin -->
