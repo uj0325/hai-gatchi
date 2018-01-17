@@ -81,7 +81,7 @@ require('condition_gatch.php');
                     </button>
                 </a>
                 <p><?php echo $login_users['username']; ?></p>
-                <button class="push">合致通知</button>
+                <button id="push">合致通知</button>
             </div>
         <?php endforeach ?>
     </div><!-- himajin -->
@@ -117,11 +117,11 @@ require('condition_gatch.php');
                 </button>
             </div>
     </div><!-- condition -->
-<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="condition.js"></script>
+<script type="text/javascript" src="push.js"></script>
 
 </body>
 </html>
-
 <?php
 // ・自動的にphpファイルを読み込む方法
 // ・phpファイルにデータを送信する前に条件分岐する方法

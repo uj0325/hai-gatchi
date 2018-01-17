@@ -1,13 +1,13 @@
 
 $(function(){
 
-    $('.push').on('click',function(){
+    $('#push').on('click',function(){
         $.ajax({
             type:"POST",
             url:"alert.php",
             data:{
                 "pushed_user": login_id,
-                "receive_user": usersID,
+                "receive_user": 1,
             }
         })
         .done(function(data){
