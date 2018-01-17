@@ -1,5 +1,11 @@
 <?php
-date_default_timezone_set('Asia/Manila');
+
+require('dbconect_gatch.php');
+
+require('ID_sql.php');
+
+
+ date_default_timezone_set('Asia/Manila');
 
 	$sql = "SELECT `random_created`,`inputer_id`,`random`
 			FROM `friend-add`

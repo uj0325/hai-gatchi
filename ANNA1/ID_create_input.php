@@ -82,10 +82,12 @@ require('ID_sql.php');
    
    <h1>はい合致edit</h1>
 
+<br>
+<br>
  　　　<div class="container">
  	　　　  <div class="row">
  		　    　<div class="col-xs-6">
-			 		   <h3>ID出力画面</h3>
+			 		   <h4>ID出力画面</h4>
 			 　　　  <div>
 					     <form method="POST" action="">
 						   <input  type="text" name="onetimeId" value="<?php echo $r_str; ?>" id="onetime" >
@@ -95,7 +97,7 @@ require('ID_sql.php');
 				　　   </div>
 
 　　　　　　　<!-- 履歴 -->
-	   	 <div>
+	   	 <div class="past">
 				     <h4>コピー履歴</h4>
 				<?php foreach ($created_id as $key): ?>
 			    <?php echo $key['random_created']; ?>
