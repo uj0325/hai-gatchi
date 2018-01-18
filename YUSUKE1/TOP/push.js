@@ -1,7 +1,6 @@
 
 $(function(){
-
-    $('.push').on('click',function(){
+    $('#usersID').on('click',function(){
         $.ajax({
             type:"POST",
             url:"alert.php",
