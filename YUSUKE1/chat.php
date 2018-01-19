@@ -1,9 +1,9 @@
 <?php
 
-if (empty($_GET['id'])) {
-    header('Location: top_push.php');
-    exit();
-}
+// if (empty($_GET['id'])) {
+//     header('Location: TOP/top_push.php');
+//     exit();
+// }
 
 ?>
 <!DOCTYPE html>
@@ -18,28 +18,11 @@ if (empty($_GET['id'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js">Push.Permission.request();</script>
 </head>
 <body>
-
-<button id="push">Push</button>
-<script type="text/javascript">
-  // jQueryを使うときの作法(おまじない、と称されるもの)
-    $(document).ready(function(){
-      // HTMLのコンテンツを全て読み込んだ後に実行する
+<h1>チャット画面</h1>
 
 
 
-        $('#push').click(function(){
-            Push.create('こんにちは！', {
-            body: '更新をお知らせします！',
-            icon: 'icon.png',
-            timeout: 8000, // 通知が消えるタイミング
-            vibrate: [100, 100, 100], // モバイル端末でのバイブレーション秒数
-                onClick: function() {
-                // 通知がクリックされた場合の設定
-                console.log(this);
-                }
-            });
-        });
-    });
-</script>
+
+<script type="text/javascript" src="../web-push-example-by-fcm-master/public/app.js"></script>
 </body>
 </html>
