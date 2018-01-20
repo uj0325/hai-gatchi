@@ -19,11 +19,11 @@ require('../YUSUKE1/dbconnect.php');
 // $user= $record['requesting_user'];
 // $other= $record['receive_user'];
 
-$user = $_SESSION['login_user']['id'];
+$user = $_SESSION['login_user']['user_id'];
 $other = $_GET['id'];
 
 if (!isset($_GET['id'])) {
-  header('Location: ../YUSUKE1/TOP/top_push.php');
+  header('Location:YUSUKE1/TOP/top_push.php');
   exit();
 }
 
