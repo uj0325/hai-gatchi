@@ -11,7 +11,7 @@ $(function(){
         .done(function(data){
             $('#test').attr('src','../images/?');
             console.log(data);
-            $('body').load('http://localhost/20171030/haigachi/YUSUKE1/TOP/top_push.php');
+            $('body').load('http://localhost/annie/gatchkun/TOP/top_push.php');
 
         })
     });
@@ -27,7 +27,7 @@ $(function(){
         .done(function(data){
             $('#test').attr('src','../images/i_drive.gif');
             console.log(data);
-            $('body').load('http://localhost/20171030/haigachi/YUSUKE1/TOP/top_push.php');
+            $('body').load('http://localhost/annie/gatchkun/TOP/top_push.php');
 
         })
     });
