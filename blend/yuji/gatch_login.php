@@ -95,17 +95,17 @@ if(!empty($_POST)){ // [J-01]
 
 		// バリデーション
 		if($username == ''){
-			$errors['username']='blank';
+			$errors['username']='blank_create';
 		}
 
 		if($email == ''){
-			$errors['email']='blank';
+			$errors['email']='blank_create';
 		}
 
 		if($password == ''){
-			$errors['password']='blank';
+			$errors['password']='blank_create';
 		}elseif (strlen($password) < 6) {
-			$errors['password']='length';
+			$errors['password']='length_create';
 		}
 
 
@@ -128,8 +128,9 @@ if(!empty($_POST)){ // [J-01]
 
 	if(empty($errors)){
 		echo 'エラーがありませんでした。確認画面へ移動します<br>';
+		echo 'エラーがありませんでした。確認画面へ移動します<br>';
 
-		move_uploaded_file($_FILES['profile_image']['tmp_name'],'profile_image/'.$_FILES['profile_image']['name']);
+		move_uploaded_file($_FILES['profile_image']['tmp_name'],'./profile_image/'.$_FILES['profile_image']['name']);
 		// これで画像を保存することができる
 
 		// エラーがない場合はセッションにもデータを保存してあげる
@@ -139,8 +140,8 @@ if(!empty($_POST)){ // [J-01]
 		$_SESSION['user_info']['profile_image']=$filename;
 
 		// リダイレクト
-		header('Location: check.php');
-		exit();
+		/*header('Location: check.php');
+		exit();*/
 
 
 	}
@@ -212,7 +213,7 @@ if(!empty($_POST)){ // [J-01]
 	<input type="text" name="username" placeholder="例：合致ときめき子" value="<?php echo $username; ?>">
 	<br>
 
-	<?php if(isset($errors['username']) && $errors['username'] == 'blank'){ ?>
+	<?php if(isset($errors['username']) && $errors['username'] == 'blank_create'){ ?>
 	<div class="alert alert-danger">
 	ユーザー名を入力してください
 	</div>
@@ -222,7 +223,7 @@ if(!empty($_POST)){ // [J-01]
 	<label>メールアドレス</label><br>
 		<input type="text" name="email" placeholder="Eメールアドレス" value="<?php echo $email; ?>"><br>
 
-	<?php if(isset($errors['email']) && $errors['email'] == 'blank'){ ?>
+	<?php if(isset($errors['email']) && $errors['email'] == 'blank_create'){ ?>
 	<div class="alert alert-danger">
 	Eメールアドレスを入力してください
 	</div>
@@ -233,9 +234,15 @@ if(!empty($_POST)){ // [J-01]
 	<input type="text" name="password">
 	<br>
 
-	<?php if(isset($errors['password']) && $errors['password'] == 'blank'){ ?>
+	<?php if(isset($errors['password']) && $errors['password'] == 'blank_create'){ ?>
 	<div class="alert alert-danger">
 	パスワードを入力してください
+	</div>
+	<?php } ?>
+
+	<?php if(isset($errors['password']) && $errors['password'] == 'length_create'){ ?>
+	<div class="alert alert-danger">
+	パスワードは6文字以上で設定してください
 	</div>
 	<?php } ?>
 
@@ -244,7 +251,7 @@ if(!empty($_POST)){ // [J-01]
 	<input type="file" name="profile_image" accept="image/*">
 	<br>
 
-	<?php if(isset($isset['profile_image']) && $errors['profile_image'] == 'blank'){ ?>
+	<?php if(isset($errors['profile_image']) && $errors['profile_image'] == 'blank_create'){ ?>
 	<div class="alert alert-danger">
 	画像を選択してください</div>
 	<?php } ?>

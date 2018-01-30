@@ -11,7 +11,7 @@ require('dbconnect.php');
 			$username = $_SESSION['user_info']['username'];
 			$email = $_SESSION['user_info']['email'];
 			$password = $_SESSION['user_info']['password'];
-			$profile_image = $_SESSION['user_info']['profile_image'];
+			$filename = $_SESSION['user_info']['profile_image'];
 			echo 'DBに登録しました。<br>';
 
 
@@ -52,7 +52,7 @@ require('dbconnect.php');
 		ユーザー名:<?php echo $_SESSION['user_info']['username']; ?><br>
 		メールアドレス:<?php echo $_SESSION['user_info']['email']; ?><br>
 		パスワード:●●●●●●●●●●<br>
-		<img src="profile_image/<?php echo $_SESSION['user_info']['profile_image']; ?>" width="150px">
+		<img src="./profile_image/<?php echo $_SESSION['user_info']['profile_image']; ?>" width="150px">
 	</div>
 	<br>
 
