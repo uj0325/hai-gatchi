@@ -95,6 +95,7 @@ if(!empty($_POST)){ // [J-01]
 
 		// バリデーション
 		if($username == ''){
+<<<<<<< HEAD
 			$errors['username']='blank';
 		}
 
@@ -106,6 +107,19 @@ if(!empty($_POST)){ // [J-01]
 			$errors['password']='blank';
 		}elseif (strlen($password) < 6) {
 			$errors['password']='length';
+=======
+			$errors['username']='blank_create';
+		}
+
+		if($email == ''){
+			$errors['email']='blank_create';
+		}
+
+		if($password == ''){
+			$errors['password']='blank_create';
+		}elseif (strlen($password) < 6) {
+			$errors['password']='length_create';
+>>>>>>> yuji
 		}
 
 
@@ -128,8 +142,14 @@ if(!empty($_POST)){ // [J-01]
 
 	if(empty($errors)){
 		echo 'エラーがありませんでした。確認画面へ移動します<br>';
+<<<<<<< HEAD
 
 		move_uploaded_file($_FILES['profile_image']['tmp_name'],'profile_image/'.$_FILES['profile_image']['name']);
+=======
+		echo 'エラーがありませんでした。確認画面へ移動します<br>';
+
+		move_uploaded_file($_FILES['profile_image']['tmp_name'],'./profile_image/'.$_FILES['profile_image']['name']);
+>>>>>>> yuji
 		// これで画像を保存することができる
 
 		// エラーがない場合はセッションにもデータを保存してあげる
@@ -139,8 +159,13 @@ if(!empty($_POST)){ // [J-01]
 		$_SESSION['user_info']['profile_image']=$filename;
 
 		// リダイレクト
+<<<<<<< HEAD
 		header('Location: check.php');
 		exit();
+=======
+		/*header('Location: check.php');
+		exit();*/
+>>>>>>> yuji
 
 
 	}
@@ -212,7 +237,11 @@ if(!empty($_POST)){ // [J-01]
 	<input type="text" name="username" placeholder="例：合致ときめき子" value="<?php echo $username; ?>">
 	<br>
 
+<<<<<<< HEAD
 	<?php if(isset($errors['username']) && $errors['username'] == 'blank'){ ?>
+=======
+	<?php if(isset($errors['username']) && $errors['username'] == 'blank_create'){ ?>
+>>>>>>> yuji
 	<div class="alert alert-danger">
 	ユーザー名を入力してください
 	</div>
@@ -222,7 +251,11 @@ if(!empty($_POST)){ // [J-01]
 	<label>メールアドレス</label><br>
 		<input type="text" name="email" placeholder="Eメールアドレス" value="<?php echo $email; ?>"><br>
 
+<<<<<<< HEAD
 	<?php if(isset($errors['email']) && $errors['email'] == 'blank'){ ?>
+=======
+	<?php if(isset($errors['email']) && $errors['email'] == 'blank_create'){ ?>
+>>>>>>> yuji
 	<div class="alert alert-danger">
 	Eメールアドレスを入力してください
 	</div>
@@ -233,18 +266,35 @@ if(!empty($_POST)){ // [J-01]
 	<input type="text" name="password">
 	<br>
 
+<<<<<<< HEAD
 	<?php if(isset($errors['password']) && $errors['password'] == 'blank'){ ?>
+=======
+	<?php if(isset($errors['password']) && $errors['password'] == 'blank_create'){ ?>
+>>>>>>> yuji
 	<div class="alert alert-danger">
 	パスワードを入力してください
 	</div>
 	<?php } ?>
 
+<<<<<<< HEAD
+=======
+	<?php if(isset($errors['password']) && $errors['password'] == 'length_create'){ ?>
+	<div class="alert alert-danger">
+	パスワードは6文字以上で設定してください
+	</div>
+	<?php } ?>
+
+>>>>>>> yuji
 	<!-- プロフィール画像アップロードエリア -->
 	<label>プロフィール画像</label>
 	<input type="file" name="profile_image" accept="image/*">
 	<br>
 
+<<<<<<< HEAD
 	<?php if(isset($isset['profile_image']) && $errors['profile_image'] == 'blank'){ ?>
+=======
+	<?php if(isset($errors['profile_image']) && $errors['profile_image'] == 'blank_create'){ ?>
+>>>>>>> yuji
 	<div class="alert alert-danger">
 	画像を選択してください</div>
 	<?php } ?>
